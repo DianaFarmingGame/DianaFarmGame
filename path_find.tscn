@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 26, 27 )
+points = PoolVector2Array( 230, 258, 387, 171, 566, 191 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Line2D"]
+position = Vector2( 31, 13 )
+polygon = PoolVector2Array( 29, 20, 76, 6, 90, 37, 44, 55 )

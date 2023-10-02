@@ -1,0 +1,99 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Control",
+"class": "GControl",
+"language": "GDScript",
+"path": "res://types/ui/g_control.gd"
+}, {
+"base": "MenuButton",
+"class": "GMenuButton",
+"language": "GDScript",
+"path": "res://types/ui/g_menu_button.gd"
+}, {
+"base": "Resource",
+"class": "GameDB",
+"language": "GDScript",
+"path": "res://types/game_db.gd"
+}, {
+"base": "Resource",
+"class": "GameMap",
+"language": "GDScript",
+"path": "res://types/game_map.gd"
+}, {
+"base": "GameMap",
+"class": "GameMapBasic",
+"language": "GDScript",
+"path": "res://types/game_map_basic.gd"
+}, {
+"base": "GameMapBasic",
+"class": "GameMapBasicRandom",
+"language": "GDScript",
+"path": "res://types/game_map_basic_random.gd"
+}, {
+"base": "Resource",
+"class": "GameTile",
+"language": "GDScript",
+"path": "res://types/game_tile.gd"
+}, {
+"base": "GameTile",
+"class": "GameTileBasic",
+"language": "GDScript",
+"path": "res://types/game_tile_basic.gd"
+}, {
+"base": "GControl",
+"class": "MenuBar",
+"language": "GDScript",
+"path": "res://types/ui/menu_bar/menu_bar.gd"
+}, {
+"base": "GameDB",
+"class": "TileDB",
+"language": "GDScript",
+"path": "res://types/tile_db/tile_db.gd"
+} ]
+_global_script_class_icons={
+"GControl": "",
+"GMenuButton": "",
+"GameDB": "",
+"GameMap": "",
+"GameMapBasic": "",
+"GameMapBasicRandom": "",
+"GameTile": "",
+"GameTileBasic": "",
+"MenuBar": "",
+"TileDB": ""
+}
+
+[application]
+
+config/name="Sketch"
+config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout=""
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/editor_data/plugin.cfg", "res://addons/editor_event/plugin.cfg", "res://addons/editor_icon_exporter/plugin.cfg", "res://addons/editor_icon_previewer/plugin.cfg", "res://addons/editor_map/plugin.cfg" )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://default_env.tres"
