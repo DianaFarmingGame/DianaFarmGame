@@ -2,7 +2,7 @@ tool
 class_name TileDB extends GameDB
 
 
-var Main := load("res://types/tile_db/main.scn") as PackedScene
+var Main := load("res://types/tile_db/main.tscn") as PackedScene
 
 
 func _get_name() -> String:

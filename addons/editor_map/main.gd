@@ -41,7 +41,8 @@ func _update_list_recr(path: String, tree: Tree, par: TreeItem) -> bool:
 				else:
 					item.free()
 			else:
-				if file_path.split(".")[-2] == "gmap":
+				var parts := file_path.split(".")
+				if parts.size() > 2 && parts[-2] == "gmap":
 					has_child = true
 					var item := tree.create_item(par)
 					item.set_text(0, node.get_basename().get_basename())

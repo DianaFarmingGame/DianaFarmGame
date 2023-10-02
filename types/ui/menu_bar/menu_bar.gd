@@ -2,7 +2,7 @@ tool
 class_name MenuBar extends GControl
 
 
-const Main := preload("./main.scn")
+const Main := preload("./main.tscn")
 
 var box: HBoxContainer
 var target: WeakRef
