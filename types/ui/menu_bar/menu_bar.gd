@@ -6,20 +6,11 @@ class_name MenuBar extends GControl
 
 const Main := preload("./main.tscn")
 
-var box: HBoxContainer
+onready var box := $"Box" as HBoxContainer
 
 
 func _ready() -> void:
-	._ready()
-	box = $"Box"
-
-
-# 将目标设置为菜单事件的发送对象（已弃用，请对每个菜单项单独绑定）
-#func connect_signals(ptarget: Object) -> void:
-#	target = weakref(ptarget)
-#	for child in box.get_children():
-#		var button := child as GMenuButton
-#		button.connect_signals(ptarget)
+	pass
 
 
 # 设置菜单栏的内容
