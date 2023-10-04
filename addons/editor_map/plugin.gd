@@ -2,7 +2,7 @@ tool
 extends EditorPlugin
 
 
-const MainPanel = preload("./main.scn")
+const MainPanel = preload("./main.tscn")
 
 var main_panel_instance
 var editor_interface: EditorInterface

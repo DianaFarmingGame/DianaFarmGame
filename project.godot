@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ProxyTexture",
+"class": "EditorIconTexture",
+"language": "GDScript",
+"path": "res://addons/editor_icon/editor_icon_texture.gd"
+}, {
 "base": "Resource",
 "class": "CraftTable",
 "language": "GDScript",
@@ -75,6 +80,7 @@ _global_script_classes=[ {
 "path": "res://types/tile_db/tile_db.gd"
 } ]
 _global_script_class_icons={
+"EditorIconTexture": "",
 "CraftTable": "",
 "GControl": "",
 "GMenuButton": "",
@@ -92,7 +98,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Sketch"
+config/name="DianaFarmGame"
 run/main_scene="res://types/craft/craft_table_ui.tscn"
 config/icon="res://icon.png"
 
@@ -100,9 +106,13 @@ config/icon="res://icon.png"
 
 default_bus_layout=""
 
+[autoload]
+
+EditorIcon="*res://addons/editor_icon/editor_icon.gd"
+
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/editor_data/plugin.cfg", "res://addons/editor_event/plugin.cfg", "res://addons/editor_icon_exporter/plugin.cfg", "res://addons/editor_icon_previewer/plugin.cfg", "res://addons/editor_map/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/editor_data/plugin.cfg", "res://addons/editor_event/plugin.cfg", "res://addons/editor_icon/plugin.cfg", "res://addons/editor_icon_exporter/plugin.cfg", "res://addons/editor_icon_previewer/plugin.cfg", "res://addons/editor_map/plugin.cfg" )
 
 [gui]
 
