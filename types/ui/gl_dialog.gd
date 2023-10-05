@@ -3,7 +3,7 @@ class_name GLDialog
 # 提供了一些静态方法用于快捷使用 GDialog
 
 
-static func prompt(title: String, info := "", text := "", placeholder := "") -> GDialog:
+static func prompt(node: Node, title: String, info := "", text := "", placeholder := "") -> GDialog:
 	var dialog := GDialog.new(title)
 	var items := []
 	if info:
@@ -14,9 +14,16 @@ static func prompt(title: String, info := "", text := "", placeholder := "") -> 
 	edit.rect_min_size.x = 200
 	edit.text = text
 	edit.placeholder_text = placeholder
+	edit.connect("text_entered", dialog, "do_resolve")
 	items.append(edit)
 	items.append(GUI.HBox([GUI.Button("确认", dialog, "_prompt_confirm", [edit])], 1))
 	dialog.set_inner(items)
 	dialog.connect("popup_hide", dialog, "do_resolve", [null])
-	return dialog
+	node.add_child(dialog)
+	dialog.open()
+	edit.call_deferred("grab_focus")
+	var result = yield(dialog, "resolved")
+	node.remove_child(dialog)
+	dialog.queue_free()
+	return result
 
