@@ -135,6 +135,7 @@ enabled=PoolStringArray( "res://addons/editor_data/plugin.cfg", "res://addons/ed
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://editor_theme.theme"
 
 [input]
 
