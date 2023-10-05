@@ -1,5 +1,6 @@
 tool
 class_name EditorIconTexture extends ProxyTexture
+# 一种 Texture，可以直接设置使用编辑器自带的图标，无法在游戏中使用（仅插件用）
 
 
 export var icon_name: String setget set_icon_name

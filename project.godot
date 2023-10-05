@@ -9,15 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "ProxyTexture",
-"class": "EditorIconTexture",
-"language": "GDScript",
-"path": "res://addons/editor_icon/editor_icon_texture.gd"
-}, {
 "base": "Resource",
 "class": "CraftTable",
 "language": "GDScript",
 "path": "res://types/craft/craft_table.gd"
+}, {
+"base": "ProxyTexture",
+"class": "EditorIconTexture",
+"language": "GDScript",
+"path": "res://addons/editor_icon/editor_icon_texture.gd"
 }, {
 "base": "Control",
 "class": "GControl",
@@ -95,8 +95,8 @@ _global_script_classes=[ {
 "path": "res://types/tile_db/tile_db.gd"
 } ]
 _global_script_class_icons={
-"EditorIconTexture": "",
 "CraftTable": "",
+"EditorIconTexture": "",
 "GControl": "",
 "GDialog": "",
 "GLDialog": "",
