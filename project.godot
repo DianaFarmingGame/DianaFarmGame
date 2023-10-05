@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/editor_icon/editor_icon_texture.gd"
 }, {
+"base": "Resource",
+"class": "CraftTable",
+"language": "GDScript",
+"path": "res://types/craft/craft_table.gd"
+}, {
 "base": "Control",
 "class": "GControl",
 "language": "GDScript",
@@ -69,6 +74,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://types/game_tile_basic.gd"
 }, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://types/item/item.gd"
+}, {
+"base": "Resource",
+"class": "ItemSpace",
+"language": "GDScript",
+"path": "res://types/item/item_space.gd"
+}, {
 "base": "GControl",
 "class": "MenuBar",
 "language": "GDScript",
@@ -81,6 +96,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "EditorIconTexture": "",
+"CraftTable": "",
 "GControl": "",
 "GDialog": "",
 "GLDialog": "",
@@ -92,6 +108,8 @@ _global_script_class_icons={
 "GameMapBasicRandom": "",
 "GameTile": "",
 "GameTileBasic": "",
+"Item": "",
+"ItemSpace": "",
 "MenuBar": "",
 "TileDB": ""
 }
@@ -99,6 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="DianaFarmGame"
+run/main_scene="res://types/craft/craft_table_ui.tscn"
 config/icon="res://icon.png"
 
 [audio]
@@ -116,6 +135,14 @@ enabled=PoolStringArray( "res://addons/editor_data/plugin.cfg", "res://addons/ed
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+use_craft_table={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 
