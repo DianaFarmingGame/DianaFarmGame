@@ -3,6 +3,7 @@ class_name TileDB extends GameDB
 
 
 var Main := load("res://types/tile_db/main.tscn") as PackedScene
+var tags := []
 
 
 func _get_name() -> String:
@@ -17,3 +18,8 @@ func _get_control(_interface: EditorInterface) -> Control:
 	var control := Main.instance() as Control
 	control.load_db(self)
 	return control
+
+
+func add_tag(tag: String) -> void:
+	if not tags.has(tag):
+		tags.append(tag)

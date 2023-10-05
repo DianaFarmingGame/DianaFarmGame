@@ -1,14 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://types/ui/menu_bar/menu_bar.gd" type="Script" id=1]
 [ext_resource path="res://types/tile_db/main.gd" type="Script" id=2]
 [ext_resource path="res://addons/editor_icon/editor_icon_texture.gd" type="Script" id=3]
-[ext_resource path="res://addons/editor_icon/icons/AnimatedTexture.res" type="Texture" id=4]
+[ext_resource path="res://addons/editor_icon/icons/Refresh.res" type="Texture" id=4]
+[ext_resource path="res://addons/editor_icon/icons/Save.res" type="Texture" id=5]
+
+[sub_resource type="ProxyTexture" id=2]
+base = ExtResource( 5 )
+script = ExtResource( 3 )
+icon_name = "Save"
 
 [sub_resource type="ProxyTexture" id=1]
 base = ExtResource( 4 )
 script = ExtResource( 3 )
-icon_name = "AnimatedTexture"
+icon_name = "Refresh"
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -19,14 +25,76 @@ script = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="MenuBar" type="Control" parent="VBoxContainer"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 20.0
+margin_bottom = 24.0
+
+[node name="MenuBar" type="Control" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_right = 960.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
 script = ExtResource( 1 )
 
-[node name="ToolButton" type="ToolButton" parent="VBoxContainer"]
-margin_top = 24.0
+[node name="ToolButton2" type="ToolButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 964.0
+margin_right = 992.0
+margin_bottom = 24.0
+icon = SubResource( 2 )
+
+[node name="ToolButton" type="ToolButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 996.0
 margin_right = 1024.0
-margin_bottom = 48.0
+margin_bottom = 24.0
+hint_tooltip = "刷新数据"
 icon = SubResource( 1 )
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer"]
+margin_top = 28.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+split_offset = 320
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer"]
+margin_right = 1024.0
+margin_bottom = 338.0
+split_offset = 240
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer"]
+margin_right = 240.0
+margin_bottom = 338.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer"]
+margin_right = 240.0
+margin_bottom = 14.0
+text = "标签"
+
+[node name="TagList" type="ItemList" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 18.0
+margin_right = 240.0
+margin_bottom = 338.0
+size_flags_vertical = 3
+items = [ "所有", null, false ]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer"]
+margin_left = 252.0
+margin_right = 1024.0
+margin_bottom = 338.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2"]
+margin_right = 772.0
+margin_bottom = 14.0
+text = "瓷砖"
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 772.0
+margin_bottom = 338.0
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/VSplitContainer"]
+margin_top = 350.0
+margin_right = 1024.0
+margin_bottom = 572.0

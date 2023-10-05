@@ -19,10 +19,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://types/ui/g_control.gd"
 }, {
+"base": "WindowDialog",
+"class": "GDialog",
+"language": "GDScript",
+"path": "res://types/ui/g_dialog.gd"
+}, {
+"base": "Reference",
+"class": "GLDialog",
+"language": "GDScript",
+"path": "res://types/ui/gl_dialog.gd"
+}, {
 "base": "MenuButton",
 "class": "GMenuButton",
 "language": "GDScript",
 "path": "res://types/ui/g_menu_button.gd"
+}, {
+"base": "Reference",
+"class": "GUI",
+"language": "GDScript",
+"path": "res://types/ui/g_ui.gd"
 }, {
 "base": "Resource",
 "class": "GameDB",
@@ -67,7 +82,10 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "EditorIconTexture": "",
 "GControl": "",
+"GDialog": "",
+"GLDialog": "",
 "GMenuButton": "",
+"GUI": "",
 "GameDB": "",
 "GameMap": "",
 "GameMapBasic": "",
