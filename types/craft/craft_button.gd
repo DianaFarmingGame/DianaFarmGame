@@ -17,5 +17,8 @@ func on_button_pressed():
 	print(output_items)
 	var output_space = $"../OutputSlot".space
 	print(output_space.items)
-	for index in output_items.size():
-		output_space.set_item(index, output_items[index])
+	if output_items != null:
+		#TODO 如果输出栏中有物品，则将其放回背包
+		for index in output_items.size():
+			output_space.set_item(index, output_items[index])
+		#TODO 清除输入栏

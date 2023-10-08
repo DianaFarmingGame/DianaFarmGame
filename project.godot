@@ -9,15 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "ProxyTexture",
-"class": "EditorIconTexture",
-"language": "GDScript",
-"path": "res://addons/editor_icon/editor_icon_texture.gd"
-}, {
 "base": "Resource",
 "class": "CraftTable",
 "language": "GDScript",
 "path": "res://types/craft/craft_table.gd"
+}, {
+"base": "ProxyTexture",
+"class": "EditorIconTexture",
+"language": "GDScript",
+"path": "res://addons/editor_icon/editor_icon_texture.gd"
 }, {
 "base": "Control",
 "class": "GControl",
@@ -64,6 +64,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://types/item/item.gd"
 }, {
+"base": "GameDB",
+"class": "ItemDB",
+"language": "GDScript",
+"path": "res://types/item/item_db.gd"
+}, {
+"base": "Resource",
+"class": "ItemDictionary",
+"language": "GDScript",
+"path": "res://types/item/item_dictionary.gd"
+}, {
 "base": "Resource",
 "class": "ItemSpace",
 "language": "GDScript",
@@ -80,8 +90,8 @@ _global_script_classes=[ {
 "path": "res://types/tile_db/tile_db.gd"
 } ]
 _global_script_class_icons={
-"EditorIconTexture": "",
 "CraftTable": "",
+"EditorIconTexture": "",
 "GControl": "",
 "GMenuButton": "",
 "GameDB": "",
@@ -91,6 +101,8 @@ _global_script_class_icons={
 "GameTile": "",
 "GameTileBasic": "",
 "Item": "",
+"ItemDB": "",
+"ItemDictionary": "",
 "ItemSpace": "",
 "MenuBar": "",
 "TileDB": ""
@@ -98,21 +110,17 @@ _global_script_class_icons={
 
 [application]
 
-config/name="DianaFarmGame"
-run/main_scene="res://types/craft/craft_table_ui.tscn"
+config/name="Sketch"
+run/main_scene="res://UI.tscn"
 config/icon="res://icon.png"
 
 [audio]
 
 default_bus_layout=""
 
-[autoload]
-
-EditorIcon="*res://addons/editor_icon/editor_icon.gd"
-
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/editor_data/plugin.cfg", "res://addons/editor_event/plugin.cfg", "res://addons/editor_icon/plugin.cfg", "res://addons/editor_icon_exporter/plugin.cfg", "res://addons/editor_icon_previewer/plugin.cfg", "res://addons/editor_map/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/editor_data/plugin.cfg", "res://addons/editor_event/plugin.cfg", "res://addons/editor_icon_exporter/plugin.cfg", "res://addons/editor_icon_previewer/plugin.cfg", "res://addons/editor_map/plugin.cfg" )
 
 [gui]
 

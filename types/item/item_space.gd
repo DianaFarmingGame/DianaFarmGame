@@ -11,7 +11,10 @@ func set_item(index, item):
 	items[index] = item
 	emit_signal("items_changed",[index])
 	return current_item
-	
+
+func get_item(index):
+	return items[index]
+
 func remove_item(index):
 	var current_item = items[index]
 	items[index] = null
