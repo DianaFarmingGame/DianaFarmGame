@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://types/common/fade.gd" type="Script" id=1]
+[ext_resource path="res://asset/20231009-204516.jpeg" type="Texture" id=2]
+
+[node name="Sprite" type="Sprite"]
+position = Vector2( 378, 254 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

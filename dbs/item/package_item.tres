@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://dbs/item/lark.tres" type="Resource" id=1]
+[ext_resource path="res://dbs/item/email.tres" type="Resource" id=2]
+[ext_resource path="res://types/item/item_space_resource.gd" type="Script" id=3]
+[ext_resource path="res://dbs/item/weixing.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 3 )
+items = [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]

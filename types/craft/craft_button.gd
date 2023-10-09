@@ -1,6 +1,7 @@
 extends Button
 
 var craft_table = preload("res://dbs/craft/craft_table.tres")
+var craft_forbidden = preload("res://types/craft/craft_forbidden.tscn")
 
 func _ready():
 	var button = $"."
@@ -18,7 +19,15 @@ func on_button_pressed():
 	var output_space = $"../OutputSlot".space
 	print(output_space.items)
 	if output_items != null:
-		#TODO 如果输出栏中有物品，则将其放回背包
+		#如果输出栏中有物品未取出，则合成失败
+		if output_space.used_volumn > 0:
+			var instance = craft_forbidden.instance()
+			$"..".add_child(instance)
+			return
 		for index in output_items.size():
 			output_space.set_item(index, output_items[index])
 		#TODO 清除输入栏
+	else:
+		# 因为不存在该合成公式而导致合成失败
+		var instance = craft_forbidden.instance()
+		$"..".add_child(instance)
