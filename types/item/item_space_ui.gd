@@ -1,9 +1,9 @@
 extends GridContainer
 
-export(Resource) var space
+@export var space: Resource
 
 func _ready():
-	space.connect("items_changed",self,"on_items_changed")
+	space.connect("items_changed", Callable(self, "on_items_changed"))
 	for item_index in space.items.size():
 		updata_space(item_index)
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://asset/20231003-140353.jpeg" type="Texture" id=1]
+[ext_resource path="res://asset/20231003-140353.jpeg" type="Texture2D" id=1]
 [ext_resource path="res://types/item/item.gd" type="Script" id=2]
 
 [resource]

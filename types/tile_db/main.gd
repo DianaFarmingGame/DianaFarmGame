@@ -1,13 +1,13 @@
-tool
+@tool
 extends Control
 
 
 var db: TileDB
 
-onready var menu_bar := $"%MenuBar" as MenuBar
-onready var btn_expand_list := $"%BtnExpandList" as ToolButton
-onready var tag_list := $"%TagList" as ItemList
-onready var editor_view := $"%EditorView" as Control
+@onready var menu_bar := $"%MenuBar" as GMenuBar
+@onready var btn_expand_list := $"%BtnExpandList" as Button
+@onready var tag_list := $"%TagList" as ItemList
+@onready var editor_view := $"%EditorView" as Control
 
 
 func load_db(pdb: TileDB) -> void:
@@ -17,11 +17,11 @@ func load_db(pdb: TileDB) -> void:
 func _ready() -> void:
 	menu_bar.set_menus({
 		"数据": [
-			GMenuButton.Item("添加标签", self, "_on_add_tag"),
+			GMenu.Item("添加标签", self, "_on_add_tag"),
 		],
 	})
 	update_db()
-	btn_expand_list.connect("toggled", self, "_on_toggle_expand_list")
+	btn_expand_list.connect("toggled", Callable(self, "_on_toggle_expand_list"))
 
 
 func update_db() -> void:
@@ -42,7 +42,7 @@ func update_tag_list() -> void:
 
 
 func _on_add_tag() -> void:
-	var result = yield(GLDialog.prompt(self, "添加标签", "请输入标签的名称：", "", "标签名称"), "completed")
+	var result = await GLDialog.prompt(self, "添加标签", "请输入标签的名称：", "", "标签名称")
 	if result:
 		db.add_tag(result)
 	update_db()

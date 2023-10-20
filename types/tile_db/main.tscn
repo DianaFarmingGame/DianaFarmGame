@@ -1,135 +1,116 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://cqb0iwoa2fdum"]
 
-[ext_resource path="res://types/ui/menu_bar/menu_bar.gd" type="Script" id=1]
-[ext_resource path="res://types/tile_db/main.gd" type="Script" id=2]
-[ext_resource path="res://addons/editor_icon/editor_icon_texture.gd" type="Script" id=3]
-[ext_resource path="res://addons/editor_icon/icons/Refresh.res" type="Texture" id=4]
-[ext_resource path="res://addons/editor_icon/icons/Save.res" type="Texture" id=5]
-[ext_resource path="res://addons/editor_icon/icons/ExpandTree.res" type="Texture" id=6]
+[ext_resource type="Script" path="res://types/ui/g_menu_bar/g_menu_bar.gd" id="1"]
+[ext_resource type="Script" path="res://types/tile_db/main.gd" id="2"]
+[ext_resource type="Script" path="res://addons/editor_icon/editor_icon_texture.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://c63fqm8m4rsuo" path="res://addons/editor_icon/icons/Save.res" id="3_4olnx"]
+[ext_resource type="Texture2D" uid="uid://cid44nqek8tp0" path="res://addons/editor_icon/icons/RotateLeft.res" id="5_fv2pf"]
+[ext_resource type="Texture2D" uid="uid://cdfx38riby8db" path="res://addons/editor_icon/icons/ExpandTree.res" id="6_obsfk"]
 
-[sub_resource type="ProxyTexture" id=2]
-base = ExtResource( 5 )
-script = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl1m3"]
+atlas = ExtResource("3_4olnx")
+region = Rect2(0, 0, 16, 16)
+script = ExtResource("3")
 icon_name = "Save"
 
-[sub_resource type="ProxyTexture" id=1]
-base = ExtResource( 4 )
-script = ExtResource( 3 )
-icon_name = "Refresh"
+[sub_resource type="AtlasTexture" id="AtlasTexture_53ee3"]
+atlas = ExtResource("5_fv2pf")
+region = Rect2(0, 0, 16, 16)
+script = ExtResource("3")
+icon_name = "RotateLeft"
 
-[sub_resource type="ProxyTexture" id=3]
-base = ExtResource( 6 )
-script = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsk4q"]
+atlas = ExtResource("6_obsfk")
+region = Rect2(0, 0, 16, 16)
+script = ExtResource("3")
 icon_name = "ExpandTree"
 
 [node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 32.0
-theme_type_variation = "Panel"
+layout_mode = 2
+theme_type_variation = &"Panel"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
-margin_left = 6.0
-margin_top = 4.0
-margin_right = 1018.0
-margin_bottom = 28.0
+layout_mode = 2
 
 [node name="MenuBar" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
-margin_right = 948.0
-margin_bottom = 24.0
+layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="ToolButton2" type="ToolButton" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 952.0
-margin_right = 980.0
-margin_bottom = 24.0
-hint_tooltip = "保存数据"
-icon = SubResource( 2 )
+[node name="ToolButton2" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "保存数据"
+icon = SubResource("AtlasTexture_bl1m3")
 
-[node name="ToolButton" type="ToolButton" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 984.0
-margin_right = 1012.0
-margin_bottom = 24.0
-hint_tooltip = "刷新数据"
-icon = SubResource( 1 )
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "刷新数据"
+icon = SubResource("AtlasTexture_53ee3")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer"]
-margin_top = 36.0
-margin_right = 1024.0
-margin_bottom = 600.0
+layout_mode = 2
 size_flags_vertical = 3
 split_offset = 320
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer"]
-margin_right = 1024.0
-margin_bottom = 348.0
+layout_mode = 2
 split_offset = 240
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer"]
-margin_right = 248.0
-margin_bottom = 348.0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer"]
-margin_right = 248.0
-margin_bottom = 22.0
+layout_mode = 2
 text = "标签"
 
 [node name="TagList" type="ItemList" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 26.0
-margin_right = 248.0
-margin_bottom = 348.0
+layout_mode = 2
 size_flags_vertical = 3
-items = [ "所有", null, false, "无标签", null, false ]
+item_count = 2
+item_0/text = "所有"
+item_1/text = "无标签"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer"]
-margin_left = 256.0
-margin_right = 1024.0
-margin_bottom = 348.0
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2"]
-margin_right = 768.0
-margin_bottom = 24.0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
-margin_top = 1.0
-margin_right = 8.0
-margin_bottom = 23.0
+layout_mode = 2
 text = "瓷砖"
 
 [node name="Control" type="Control" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 12.0
-margin_right = 736.0
-margin_bottom = 24.0
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BtnExpandList" type="ToolButton" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+[node name="BtnExpandList" type="Button" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
-margin_left = 740.0
-margin_right = 768.0
-margin_bottom = 24.0
-hint_tooltip = "展开面板"
+layout_mode = 2
+tooltip_text = "展开面板"
 toggle_mode = true
-icon = SubResource( 3 )
+icon = SubResource("AtlasTexture_rsk4q")
 
 [node name="ItemList" type="ItemList" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2"]
-margin_top = 28.0
-margin_right = 768.0
-margin_bottom = 348.0
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="EditorView" type="PanelContainer" parent="VBoxContainer/VSplitContainer"]
 unique_name_in_owner = true
-margin_top = 356.0
-margin_right = 1024.0
-margin_bottom = 564.0
+layout_mode = 2

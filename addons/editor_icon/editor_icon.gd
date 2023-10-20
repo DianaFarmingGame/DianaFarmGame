@@ -1,20 +1,20 @@
-tool
+@tool
 extends Node
 
 
 var signed_textures := []
-var editor_interface: EditorInterface setget set_editor_interface
+var editor_interface: EditorInterface: set = set_editor_interface
 
 
-func sign(texture: EditorIconTexture) -> void:
+func rsign(texture: EditorIconTexture) -> void:
 	signed_textures.append(weakref(texture))
 
 
 func get_icon(name: String):
 	if editor_interface:
 		var control = editor_interface.get_base_control()
-		if control.has_icon(name, "EditorIcons"):
-			return editor_interface.get_base_control().get_icon(name, "EditorIcons")
+		if control.has_theme_icon(name, "EditorIcons"):
+			return editor_interface.get_base_control().get_theme_icon(name, "EditorIcons")
 	return null
 
 

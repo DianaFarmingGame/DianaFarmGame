@@ -1,69 +1,51 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://dvatij78b2kbd"]
 
-[ext_resource path="res://addons/editor_data/main.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://addons/editor_data/main.gd" id="1"]
 
-[sub_resource type="StyleBoxEmpty" id=3]
-content_margin_left = 6.0
-content_margin_right = 6.0
-content_margin_top = 2.0
-content_margin_bottom = 4.0
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id="2"]
 
 [node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Tabs" type="TabContainer" parent="."]
+[node name="TabBar" type="TabContainer" parent="."]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color_bg = Color( 0.803922, 0.811765, 0.823529, 1 )
-custom_colors/font_color_fg = Color( 0.321569, 0.580392, 0.890196, 1 )
-custom_constants/side_margin = 4
-custom_styles/tab_fg = SubResource( 3 )
-custom_styles/tab_bg = SubResource( 3 )
-custom_styles/panel = SubResource( 4 )
-tab_align = 0
+theme_type_variation = &"Panel"
 
-[node name="说明" type="Control" parent="Tabs"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 24.0
-rect_clip_content = true
+[node name="说明" type="Control" parent="TabBar"]
+clip_contents = true
+layout_mode = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tabs/说明"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabBar/说明"]
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-custom_styles/focus = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
+theme_override_styles/focus = SubResource("1")
+theme_override_styles/normal = SubResource("2")
 bbcode_enabled = true
-bbcode_text = "[center]
+text = "[center]
 [b]Godot Data Editor[/b]
-[i]Lane Sun[/i]
-
-欢迎使用Godot数据编辑器
-此编辑器用于对游戏的元数据和存储数据进行各类操作
-请在顶栏选择要编辑的数据库并操作
-[/center]"
-text = "
-Godot Data Editor
 Lane Sun
 
 欢迎使用Godot数据编辑器
 此编辑器用于对游戏的元数据和存储数据进行各类操作
 请在顶栏选择要编辑的数据库并操作
-"
-fit_content_height = true
+[/center]"
+fit_content = true

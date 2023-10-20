@@ -1,4 +1,4 @@
-class_name GDialog extends WindowDialog
+class_name GDialog extends Window
 
 
 signal resolved(result)
@@ -8,7 +8,7 @@ var is_resolved = false
 
 
 func _init(ptitle: String) -> void:
-	window_title = ptitle
+	title = ptitle
 	margin = GUI.Margin(8)
 	add_child(margin)
 
@@ -21,7 +21,7 @@ func set_inner(items := []) -> void:
 
 
 func open() -> void:
-	popup_centered_minsize(margin.get_minimum_size())
+	popup_centered_clamped(margin.get_minimum_size())
 
 
 func do_resolve(result = null) -> void:

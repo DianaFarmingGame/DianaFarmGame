@@ -2,7 +2,7 @@ extends Resource
 
 class_name ItemSpace
 
-export(Array,Resource) var items
+@export var items # (Array,Resource)
 
 signal items_changed(indexs)
 

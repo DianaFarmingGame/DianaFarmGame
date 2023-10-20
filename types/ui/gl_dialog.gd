@@ -11,18 +11,18 @@ static func prompt(node: Node, title: String, info := "", text := "", placeholde
 		label.text = info
 		items.append(label)
 	var edit := LineEdit.new()
-	edit.rect_min_size.x = 200
+	edit.custom_minimum_size.x = 200
 	edit.text = text
 	edit.placeholder_text = placeholder
-	edit.connect("text_entered", dialog, "do_resolve")
+	edit.connect("text_submitted", Callable(dialog, "do_resolve"))
 	items.append(edit)
-	items.append(GUI.HBox([GUI.Button("确认", dialog, "_prompt_confirm", [edit])], 1))
+	items.append(GUI.HBox([GUI.GButton("确认", dialog, "_prompt_confirm", [edit])], 1))
 	dialog.set_inner(items)
-	dialog.connect("popup_hide", dialog, "do_resolve", [null])
+	dialog.connect("popup_hide", Callable(dialog, "do_resolve").bind(null))
 	node.add_child(dialog)
 	dialog.open()
 	edit.call_deferred("grab_focus")
-	var result = yield(dialog, "resolved")
+	var result = await dialog.resolved
 	node.remove_child(dialog)
 	dialog.queue_free()
 	return result

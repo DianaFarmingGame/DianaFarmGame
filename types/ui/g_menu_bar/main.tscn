@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cpx718t1obp0s"]
+
+[node name="Box" type="HBoxContainer"]

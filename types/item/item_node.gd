@@ -1,6 +1,6 @@
 extends TextureRect
 
-func get_drag_data(_position):
+func _get_drag_data(_position):
 	var item_index = get_parent().get_index()
 	var space = get_parent().get_parent().space
 	var item = space.remove_item(item_index)

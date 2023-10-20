@@ -1,7 +1,7 @@
 class_name GameMapBasic extends GameMap
 
 
-export var fallback_tile_id := 0
+@export var fallback_tile_id := 0
 
 
 var map_data: Array

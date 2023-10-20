@@ -1,13 +1,14 @@
 @tool
-class_name TileDB extends GameDB
+class_name Tile extends GameDB
 
 
-var Main := load("res://types/tile_db/main.tscn") as PackedScene
-var tags := []
+@export var name := "未命名"
+
+var Main := load("res://types/tile/main.tscn") as PackedScene
 
 
 func _get_name() -> String:
-	return "瓷砖"
+	return "Tile: " + name
 
 
 func _get_icon(interface: EditorInterface) -> Texture2D:
@@ -16,10 +17,5 @@ func _get_icon(interface: EditorInterface) -> Texture2D:
 
 func _get_control(_interface: EditorInterface) -> Control:
 	var control := Main.instantiate() as Control
-	control.load_db(self)
+#	control.load_db(self)
 	return control
-
-
-func add_tag(tag: String) -> void:
-	if not tags.has(tag):
-		tags.append(tag)

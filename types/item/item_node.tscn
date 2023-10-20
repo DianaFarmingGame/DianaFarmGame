@@ -3,7 +3,7 @@
 [ext_resource path="res://types/item/item_node.gd" type="Script" id=1]
 
 [node name="TextureRect" type="TextureRect"]
-margin_right = 60.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 60, 60 )
+offset_right = 60.0
+offset_bottom = 60.0
+custom_minimum_size = Vector2( 60, 60 )
 script = ExtResource( 1 )
