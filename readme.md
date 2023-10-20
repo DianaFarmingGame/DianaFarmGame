@@ -2,11 +2,11 @@
 
 ## 运行环境
 
-Godot v3.5.3.stable.official [6c814135b] 版本
+Godot v4.1.2.stable.official [399c9dc39]
 
 ## 格式/命名/文本约定
 
-- 遵守 GDScript 的官方格式约定：[GDScript 风格指南 &mdash; Godot Engine (3.5) 简体中文文档](https://docs.godotengine.org/zh_CN/3.5/tutorials/scripting/gdscript/gdscript_styleguide.html)（尽量）
+- 遵守 GDScript 的官方格式约定：[GDScript 风格指南 &mdash; Godot Engine (4.2) 简体中文文档](https://docs.godotengine.org/zh_CN/4.x/tutorials/scripting/gdscript/gdscript_styleguide.html)（尽量）
 
 - 场景和资源尽量使用文本格式存储（即 `.tscn` 后缀和 `.tres` 格式），主题使用 `.theme`
 
@@ -25,6 +25,8 @@ Godot v3.5.3.stable.official [6c814135b] 版本
 - 脚本中的路径（打包场景的路径）尽量使用相对路径，需要返回上一级则使用绝对路径
 
 - 对于脚本类中暴露在外的接口部分，尽量指定类型
+
+- 尽量填写接口的注释（4.x 版本现已经支持自动生成的编辑器内嵌文档）
 
 ## 目录约定
 
