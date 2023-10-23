@@ -1,10 +1,11 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="ItemSpace" load_steps=4 format=3 uid="uid://b5pixhmtrq7wf"]
 
-[ext_resource path="res://dbs/item/lark.tres" type="Resource" id=1]
-[ext_resource path="res://dbs/item/email.tres" type="Resource" id=2]
-[ext_resource path="res://types/item/item_space_resource.gd" type="Script" id=3]
-[ext_resource path="res://dbs/item/weixing.tres" type="Resource" id=4]
+[ext_resource type="Resource" path="res://dbs/item/email.tres" id="2"]
+[ext_resource type="Resource" path="res://dbs/item/weixing.tres" id="2_3ry8t"]
+[ext_resource type="Script" path="res://types/item/item_space_resource.gd" id="3"]
 
 [resource]
-script = ExtResource( 3 )
-items = [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+script = ExtResource("3")
+space_name = "package"
+total_volumn = 35
+init_types = [ExtResource("2"), ExtResource("2_3ry8t")]

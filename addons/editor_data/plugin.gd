@@ -1,4 +1,4 @@
-tool
+@tool
 extends EditorPlugin
 
 
@@ -15,9 +15,9 @@ func _init() -> void:
 
 
 func _enter_tree():
-	editor_interface.get_editor_viewport().add_child(main_panel_instance)
+	editor_interface.get_editor_main_screen().add_child(main_panel_instance)
 #	connect("resource_saved", self, "_on_resource_saved")
-	make_visible(false)
+	_make_visible(false)
 
 
 func _exit_tree():
@@ -25,18 +25,18 @@ func _exit_tree():
 		main_panel_instance.queue_free()
 
 
-func has_main_screen():
+func _has_main_screen():
 	return true
 
 
-func make_visible(visible):
+func _make_visible(visible):
 	if main_panel_instance:
 		main_panel_instance.visible = visible
 
 
-func get_plugin_name():
+func _get_plugin_name():
 	return "Data"
 
 
-func get_plugin_icon():
+func _get_plugin_icon():
 	return editor_interface.get_base_control().get_icon("Filesystem", "EditorIcons")

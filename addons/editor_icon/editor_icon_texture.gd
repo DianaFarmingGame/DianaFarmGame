@@ -1,8 +1,8 @@
-tool
+@tool
 class_name EditorIconTexture extends ProxyTexture
 
 
-export var icon_name: String setget set_icon_name
+@export var icon_name: String: set = set_icon_name
 
 
 #func _init() -> void:

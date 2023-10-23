@@ -2,7 +2,7 @@ extends Resource
 
 class_name Item
 
-export(String) var name
-export(Texture) var texture
-export(int) var hp
-export(int) var mp
+@export var name: String
+@export var texture: Texture2D
+@export var hp: int
+@export var mp: int

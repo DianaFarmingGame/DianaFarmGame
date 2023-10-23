@@ -1,7 +1,7 @@
 class_name GameTile extends Resource
 
 
-export var name: String
+@export var name: String
 
 
 var meta_data: Dictionary

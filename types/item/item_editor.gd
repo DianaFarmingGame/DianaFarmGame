@@ -1,4 +1,4 @@
-tool
+@tool
 extends Control
 
 var item_dictionary: ItemDictionary = preload("res://dbs/item/item_dictionary.tres")
@@ -6,9 +6,9 @@ var item_dictionary: ItemDictionary = preload("res://dbs/item/item_dictionary.tr
 func _ready():
 	update()
 	var add_button = $Panel/AddButton
-	add_button.connect("pressed", self, "_on_add_button_pressed")
+	add_button.connect("pressed", Callable(self, "_on_add_button_pressed"))
 	var save_button = $Panel/SaveButton
-	save_button.connect("pressed", self, "_on_save_button_pressed")
+	save_button.connect("pressed", Callable(self, "_on_save_button_pressed"))
 
 
 func _on_add_button_pressed():

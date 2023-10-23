@@ -1,10 +1,10 @@
-tool
+@tool
 extends Control
 
 
 var db: TileDB
 
-onready var menu_bar := $"%MenuBar" as MenuBar
+@onready var menu_bar := $"%MenuBar" as MenuBar
 
 
 func load_db(pdb: TileDB) -> void:

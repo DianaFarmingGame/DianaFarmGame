@@ -1,22 +1,22 @@
-tool
+@tool
 extends AcceptDialog
 
 signal update_request()
 
-onready var search_box = $body/search/box
-onready var search_box_count_label = $body/search/found
+@onready var search_box = $body/search/box
+@onready var search_box_count_label = $body/search/found
 
-onready var icons_control = $body/icons
-onready var previews_container = icons_control.get_node("previews/container")
-onready var previews_scroll = icons_control.get_node("previews")
-onready var icon_info = icons_control.get_node("info/icon")
+@onready var icons_control = $body/icons
+@onready var previews_container = icons_control.get_node("previews/container")
+@onready var previews_scroll = icons_control.get_node("previews")
+@onready var icon_info = icons_control.get_node("info/icon")
 
-onready var icon_preview_size_range = icon_info.get_node("params/size/range")
-onready var icon_info_label = icon_info.get_node("label")
-onready var icon_preview = icon_info.get_node("preview")
-onready var icon_copied_label = icon_info.get_node("copied")
-onready var icon_size_label = icon_info.get_node("size")
-onready var icon_preview_size = icon_info.get_node("params/size/pixels")
+@onready var icon_preview_size_range = icon_info.get_node("params/size/range")
+@onready var icon_info_label = icon_info.get_node("label")
+@onready var icon_preview = icon_info.get_node("preview")
+@onready var icon_copied_label = icon_info.get_node("copied")
+@onready var icon_size_label = icon_info.get_node("size")
+@onready var icon_preview_size = icon_info.get_node("params/size/pixels")
 
 const SELECT_ICON_MSG = "Select any icon."
 const ICON_SIZE_MSG = "Icon size: "
@@ -38,13 +38,13 @@ func _ready():
 	icon_preview_size_range.min_value = MIN_ICON_SIZE
 	icon_preview_size_range.max_value = MAX_ICON_SIZE
 
-	icon_preview.rect_min_size = Vector2(MAX_ICON_SIZE, MAX_ICON_SIZE)
+	icon_preview.custom_minimum_size = Vector2(MAX_ICON_SIZE, MAX_ICON_SIZE)
 
-	if has_color("success_color", "Editor"):
+	if has_theme_color("success_color", "Editor"):
 		var color = get_color("success_color", "Editor")
-		icon_copied_label.add_color_override("font_color", color);
+		icon_copied_label.add_theme_color_override("font_color", color);
 
-	get_ok().hide() # give more space for icons
+	get_ok_button().hide() # give more space for icons
 
 	_queue_update()
 
@@ -66,11 +66,11 @@ func add_icon(p_icon, p_name):
 	var icon = TextureRect.new()
 	icon.expand = true
 	icon.texture = p_icon
-	icon.rect_min_size = Vector2(icon_size, icon_size)
-	icon.hint_tooltip = p_name
+	icon.custom_minimum_size = Vector2(icon_size, icon_size)
+	icon.tooltip_text = p_name
 	icon.name = p_name
 
-	icon.connect('gui_input', self, '_icon_gui_input', [icon])
+	icon.connect('gui_input', Callable(self, '_icon_gui_input').bind(icon))
 
 	previews_container.add_child(icon)
 
@@ -78,27 +78,27 @@ func add_icon(p_icon, p_name):
 func _icon_gui_input(event, icon):
 
 	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT:
 			# Copy raw icon's name into the clipboard
-			OS.clipboard = icon.hint_tooltip
+			OS.clipboard = icon.tooltip_text
 			icon_copied_label.show()
 
-		elif event.button_index == BUTTON_RIGHT:
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			# Copy icon's name with embedded code into the clipboard
-			var snippet = SNIPPET_TEMPLATE % [icon.hint_tooltip]
+			var snippet = SNIPPET_TEMPLATE % [icon.tooltip_text]
 			OS.clipboard = snippet
 			icon_copied_label.show()
 
 	elif event is InputEventMouseMotion:
 		# Preview hovered icon on the side panel
-		icon_info_label.text = icon.hint_tooltip
+		icon_info_label.text = icon.tooltip_text
 		icon_preview.texture = icon.texture
 		icon_size_label.text = ICON_SIZE_MSG + str(icon.texture.get_size())
 
 
 func _input(event):
 	if event is InputEventKey and event.is_pressed() and not event.echo:
-		if event.alt and event.scancode == KEY_I:
+		if event.alt and event.keycode == KEY_I:
 			if not visible:
 				display()
 			else:
@@ -136,17 +136,17 @@ func _update_icons():
 	for idx in previews_container.get_child_count():
 		var icon = previews_container.get_child(idx)
 
-		if not filter.is_subsequence_ofi(icon.hint_tooltip):
+		if not filter.is_subsequence_ofi(icon.tooltip_text):
 			icon.visible = false
 		else:
 			icon.visible = true
 			number += 1
 
-		icon.rect_min_size = Vector2(icon_size, icon_size)
-		icon.rect_size = icon.rect_min_size
+		icon.custom_minimum_size = Vector2(icon_size, icon_size)
+		icon.size = icon.custom_minimum_size
 
-	var sep = previews_container.get_constant('hseparation')
-	var cols = int(previews_scroll.rect_size.x / (icon_size + sep))
+	var sep = previews_container.get_constant('h_separation')
+	var cols = int(previews_scroll.size.x / (icon_size + sep))
 
 	previews_container.columns = cols - 1
 	icon_preview_size.text = str(icon_size) + " px"
@@ -179,7 +179,7 @@ func _on_container_mouse_exited():
 
 func _on_window_about_to_show():
 	# For some reason can't get proper rect size, so need to wait
-	yield(previews_container, 'sort_children')
+	await previews_container.sort_children
 	search_box.grab_focus()
 	_queue_update()
 

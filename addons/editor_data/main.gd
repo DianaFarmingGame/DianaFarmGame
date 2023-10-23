@@ -1,4 +1,4 @@
-tool
+@tool
 extends Control
 
 
@@ -6,11 +6,11 @@ var editor_interface: EditorInterface
 var dbs: Array
 
 
-onready var tabs := $"%Tabs" as TabContainer
+@onready var tabs := $"%TabBar" as TabContainer
 
 
 func _ready():
-	tabs.connect("tab_changed", self, "_on_tab_changed")
+	tabs.connect("tab_changed", Callable(self, "_on_tab_changed"))
 	update_list()
 
 
@@ -23,9 +23,9 @@ func update_list():
 		child.queue_free()
 	
 	var path := "res://dbs"
-	var dir := Directory.new()
+	var dir := DirAccess.new()
 	if dir.open(path) == OK:
-		dir.list_dir_begin(true, true)
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		while true:
 			var node := dir.get_next()
 			if node == "":
@@ -44,7 +44,7 @@ func update_list():
 						tabs.set_tab_icon(idx, db.get_icon(editor_interface))
 
 
-func _get_editor_icon(name: String) -> Texture:
+func _get_editor_icon(name: String) -> Texture2D:
 	return editor_interface.get_base_control().get_icon(name, "EditorIcons")
 
 
@@ -53,4 +53,4 @@ func _on_tab_changed(idx: int) -> void:
 		var db := dbs[idx - 1] as GameDB
 		var tab := tabs.get_child(idx) as PanelContainer
 		if tab.get_child_count() == 0:
-			tab.add_child(db.get_control(editor_interface))
+			tab.add_child(db.is_ctrl_pressed(editor_interface))

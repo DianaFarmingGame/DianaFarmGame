@@ -1,7 +1,7 @@
 class_name GameMap extends Resource
 
 
-export var name: String
+@export var name: String
 
 
 var map_height: int

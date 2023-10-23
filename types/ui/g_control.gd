@@ -1,13 +1,13 @@
-tool
+@tool
 class_name GControl extends Control
 
 
-onready var control := _get_control()
+@onready var control := _get_control()
 
 
 func _ready() -> void:
 	control.set_anchors_preset(Control.PRESET_WIDE)
-	control.connect("minimum_size_changed", self, "_on_min_size_changed")
+	control.connect("minimum_size_changed", Callable(self, "_on_min_size_changed"))
 	add_child(control)
 	_on_min_size_changed()
 

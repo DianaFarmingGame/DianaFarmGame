@@ -1,17 +1,17 @@
-tool
+@tool
 extends Control
 
 
 var editor_interface: EditorInterface
 
 
-onready var menu_file := $"%MenuFile" as MenuButton
-onready var tree := $"%Tree" as Tree
+@onready var menu_file := $"%MenuFile" as MenuButton
+@onready var tree := $"%Tree" as Tree
 
 
 func _ready():
-	menu_file.get_popup().connect("id_pressed", self, "_on_menu_file_pressed")
-	tree.connect("item_activated", self, "_on_tree_actived")
+	menu_file.get_popup().connect("id_pressed", Callable(self, "_on_menu_file_pressed"))
+	tree.connect("item_activated", Callable(self, "_on_tree_actived"))
 	update_list()
 
 
@@ -23,10 +23,10 @@ func update_list():
 	_update_list_recr("res://", tree, root)
 
 func _update_list_recr(path: String, tree: Tree, par: TreeItem) -> bool:
-	var dir := Directory.new()
+	var dir := DirAccess.new()
 	var has_child := false
 	if dir.open(path) == OK:
-		dir.list_dir_begin(true, true)
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		while true:
 			var node := dir.get_next()
 			if node == "":
@@ -51,7 +51,7 @@ func _update_list_recr(path: String, tree: Tree, par: TreeItem) -> bool:
 	return has_child
 
 
-func _get_editor_icon(name: String) -> Texture:
+func _get_editor_icon(name: String) -> Texture2D:
 	return editor_interface.get_base_control().get_icon(name, "EditorIcons")
 
 

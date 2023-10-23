@@ -1,4 +1,4 @@
-tool
+@tool
 class_name MenuBar extends GControl
 # 包含一组 GMenuButton 的 HBoxContainer ，可以直接用 set_menus 方法设置菜单栏的内容
 # 具体的使用示例请参考 "res://types/tile_db/main.gd"
@@ -6,7 +6,7 @@ class_name MenuBar extends GControl
 
 const Main := preload("./main.tscn")
 
-onready var box := $"Box" as HBoxContainer
+@onready var box := $"Box" as HBoxContainer
 
 
 func _ready() -> void:
@@ -41,4 +41,4 @@ func set_menus(menus: Dictionary) -> void:
 
 
 func _get_control() -> Control:
-	return Main.instance() as Control
+	return Main.instantiate() as Control

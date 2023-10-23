@@ -1,16 +1,16 @@
 class_name GameMapBasicRandom extends GameMapBasic
 
 
-export var tile_id_min := 0
-export var tile_id_max := 1
-export var tile_id_base := 1
-export var base_height := 1
-export var rand_height := 1
-export var random_seed := 0
+@export var tile_id_min := 0
+@export var tile_id_max := 1
+@export var tile_id_base := 1
+@export var base_height := 1
+@export var rand_height := 1
+@export var random_seed := 0
 
 
 func _init_data() -> void:
-	._init_data()
+	super._init_data()
 	
 	# fill base
 	for i in range(base_height):

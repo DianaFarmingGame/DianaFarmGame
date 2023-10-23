@@ -1,4 +1,4 @@
-tool
+@tool
 class_name GMenuButton extends MenuButton
 # 修改后的菜单按钮，可以直接用 set_menu 方法设置菜单的内容，并提供直观的点击绑定
 
@@ -10,7 +10,7 @@ enum EntryType {
 
 var menu: Array
 
-onready var popup := get_popup()
+@onready var popup := get_popup()
 
 
 # 添加一个基本菜单项，同时将项目的点击事件与 target 的 handle 方法绑定，
@@ -32,7 +32,7 @@ static func _unbind_handle(label: String) -> void:
 
 
 func _ready() -> void:
-	popup.connect("id_pressed", self, "_on_id_pressed")
+	popup.connect("id_pressed", Callable(self, "_on_id_pressed"))
 
 
 # 设置弹出的菜单
