@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DianaFarmGame"
-run/main_scene="res://types/craft/craft_table_ui.tscn"
+run/main_scene="res://UI.tscn"
 config/features=PackedStringArray("4.1")
 config/icon="res://icon.png"
 
@@ -41,6 +41,11 @@ common/drop_mouse_on_gui_input_disabled=true
 use_craft_table={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":82,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+open_package={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":66,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 

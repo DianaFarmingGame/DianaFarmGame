@@ -2,8 +2,11 @@ extends GridContainer
 
 @export var space: Resource
 
+var highlight_slot: TextureButton
+
 func _ready():
 	space.connect("items_changed", Callable(self, "on_items_changed"))
+	space.init()
 	for item_index in space.items.size():
 		updata_space(item_index)
 

@@ -2,13 +2,14 @@ extends Resource
 
 class_name CraftTable
 
-var email = preload("res://dbs/item/email.tres")
+var lark = preload("res://dbs/item/lark.tres")
 
 var formulas = {
-	"lark+weixing" : [email]
+	"email+weixing" : [lark]
 }
 
 func get_craft_result(input: String):
+	print(input)
 	if input in formulas:
 		return formulas[input]
 	else:

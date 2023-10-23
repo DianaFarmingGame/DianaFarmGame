@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" script_class="ItemSpace" load_steps=2 format=3 uid="uid://c73w61jcijxsb"]
 
-[ext_resource path="res://types/item/item_space.gd" type="Script" id=1]
-[ext_resource path="res://dbs/item/lark.tres" type="Resource" id=2]
-[ext_resource path="res://dbs/item/weixing.tres" type="Resource" id=3]
+[ext_resource type="Script" path="res://types/item/item_space_resource.gd" id="1"]
 
 [resource]
-script = ExtResource( 1 )
-items = [ ExtResource( 2 ), ExtResource( 3 ), null, null, null, null, null, null, null ]
+script = ExtResource("1")
+space_name = "craft_input"
+total_volumn = 9
+init_types = []
