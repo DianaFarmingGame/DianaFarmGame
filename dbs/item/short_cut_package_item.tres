@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource("3")
 space_name = "short_cut"
-total_volumn = 9
+total_volumn = 10
 init_types = [ExtResource("1_fii0y"), ExtResource("2")]

@@ -39,8 +39,12 @@ func _drop_data(_position, data):
 			data.item.num -= move_num
 			get_parent().space.set_item(this_slot_index, move_item)
 			return
-	get_parent().space.set_item(this_slot_index, data.item)
-	data.space.set_item(data.item_index, current_slot_item)
+	var is_overlie = get_parent().space.set_item(this_slot_index, data.item)
+	# 如果触发了堆叠就不需要换位了，直接置空
+	if !is_overlie:
+		data.space.set_item(data.item_index, current_slot_item)
+	else :
+		data.space.set_item(data.item_index, null)
 
 func _on_button_pressed():
 	if get_parent().highlight_slot != null:

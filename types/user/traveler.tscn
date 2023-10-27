@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3dc13m6rjq2b"]
+
+[ext_resource type="Script" path="res://types/user/user.gd" id="1_hrvie"]
+[ext_resource type="PackedScene" uid="uid://2i14dgh7xwtf" path="res://types/animation/animation.tscn" id="2_nkf2y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lp1pn"]
+radius = 55.0
+height = 134.0
+
+[node name="traveler" type="Node2D"]
+position = Vector2(556, 326)
+script = ExtResource("1_hrvie")
+speed = 400
+run_speed = 800
+hp_max = 1000
+hp_recover = 10
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_lp1pn")
+
+[node name="animation" parent="." instance=ExtResource("2_nkf2y")]
+animation = &"traveler"

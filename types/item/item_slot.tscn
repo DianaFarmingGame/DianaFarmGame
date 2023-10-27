@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b8sc73m58awym"]
 
-[ext_resource path="res://asset/20231003-005105.jpeg" type="Texture2D" id=1]
-[ext_resource path="res://types/item/item_slot.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://d1evemdvk6f4d" path="res://asset/20231003-005105.jpeg" id="1"]
+[ext_resource type="Script" path="res://types/item/item_slot.gd" id="2"]
 
 [node name="ItemSlot" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 stretch_mode = 6
-script = ExtResource( 2 )
+script = ExtResource("2")

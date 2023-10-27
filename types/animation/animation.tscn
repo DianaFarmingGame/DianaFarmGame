@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2i14dgh7xwtf"]
+
+[ext_resource type="SpriteFrames" uid="uid://c3mi3uk3b75r7" path="res://dbs/animation.tres" id="1_i3mhm"]
+
+[node name="animation" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_i3mhm")
+animation = &"email"

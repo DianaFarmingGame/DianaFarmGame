@@ -29,22 +29,24 @@ func items_set(value):
 	items = value
 	used_volumn = countNonNullObjects(items)
 
-func set_item(index, item):
+# 返回值为是否触发堆叠
+func set_item(index, item) -> bool:
 	#判空
 	if item == null:
 		items[index] = null
 		emit_signal("items_changed",[index])
 		used_volumn = countNonNullObjects(items)
-		return
+		return false
 	#判断一下该物品在当前空间是否有同列项，有则合并
 	for origin_item in items:
 		if origin_item != null && origin_item != item && origin_item.get_item_name() == item.get_item_name():
 			# 自己不能和自己堆叠,同类物品才能堆叠
 			origin_item.num += item.num
-			return
+			return true
 	items[index] = item
 	emit_signal("items_changed",[index])
 	used_volumn = countNonNullObjects(items)
+	return false
 
 func get_item(index):
 	return items[index]
@@ -72,3 +74,12 @@ func countNonNullObjects(array):
 		if obj != null:
 			count += 1
 	return count
+
+func get_first_empty_slot():
+	# 获取物品空间中第一个空槽
+	if used_volumn == total_volumn:
+		return -1
+	for index in range(total_volumn):
+		if items[index] == null:
+			return index
+		

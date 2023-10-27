@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://v63vbemp01w2"]
+
+[ext_resource type="PackedScene" uid="uid://bx0gooj572s8f" path="res://UI.tscn" id="1_u2hni"]
+[ext_resource type="PackedScene" uid="uid://b3dc13m6rjq2b" path="res://types/user/traveler.tscn" id="2_30f5b"]
+[ext_resource type="PackedScene" uid="uid://b14i808eq4xqn" path="res://types/item/item_in_world.tscn" id="3_c787g"]
+
+[node name="MainWorld" type="Node2D"]
+
+[node name="ui" parent="." instance=ExtResource("1_u2hni")]
+
+[node name="traveler" parent="." instance=ExtResource("2_30f5b")]
+
+[node name="item_in_world" parent="." instance=ExtResource("3_c787g")]
+position = Vector2(710, 85)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuqw6ejx1wrm5"]
+
+[ext_resource type="Texture2D" uid="uid://le2xvwmqcsfv" path="res://asset/20231027-194320.jpeg" id="1_tyx4o"]
+
+[node name="status" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="hp" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 1000.0
+value = 100.0
+texture_progress = ExtResource("1_tyx4o")
+texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)

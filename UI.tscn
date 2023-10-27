@@ -1,42 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx0gooj572s8f"]
+[gd_scene load_steps=5 format=3 uid="uid://bx0gooj572s8f"]
 
 [ext_resource type="PackedScene" path="res://types/craft/craft_table_ui.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cq2lwpuipu34e" path="res://types/package/shortcut_package_ui.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://xmttbatphjit" path="res://types/package/package_ui.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cuqw6ejx1wrm5" path="res://types/user/status.tscn" id="4_m0dpd"]
 
-[node name="Control" type="Control"]
+[node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="UI" type="TextEdit" parent="."]
-layout_mode = 0
-offset_right = 1021.0
-offset_bottom = 601.0
-
-[node name="CraftTable" parent="UI" instance=ExtResource("1")]
+[node name="CraftTable" parent="." instance=ExtResource("1")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -750.0
-offset_right = 0.0
+offset_left = 231.0
+offset_top = 111.0
+offset_right = 981.0
+offset_bottom = 450.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="ShortcutPackage" parent="UI" instance=ExtResource("2")]
+[node name="ShortcutPackage" parent="." instance=ExtResource("2")]
 layout_mode = 1
+offset_left = 237.5
+offset_top = 511.0
+offset_right = 743.5
+offset_bottom = 561.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Package" parent="UI" instance=ExtResource("3")]
+[node name="Package" parent="." instance=ExtResource("3")]
 layout_mode = 1
 anchors_preset = 4
 anchor_left = 0.0
 anchor_right = 0.0
 offset_left = 0.0
-offset_top = -202.0
+offset_top = 78.5
 offset_right = 309.0
-offset_bottom = 202.0
+offset_bottom = 482.5
 grow_vertical = 2
+
+[node name="status" parent="." instance=ExtResource("4_m0dpd")]
+layout_mode = 1
+offset_left = 37.0
+offset_top = 41.0
+offset_right = 37.0
+offset_bottom = 41.0

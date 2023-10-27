@@ -1,0 +1,40 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://c3mi3uk3b75r7"]
+
+[ext_resource type="Texture2D" uid="uid://ssupxini1hwp" path="res://asset/pixil-frame-0.png" id="1_m6bqy"]
+[ext_resource type="Texture2D" uid="uid://daa4lm1qqgx6h" path="res://asset/playerGrey_walk1.png" id="1_rmmx8"]
+[ext_resource type="Texture2D" uid="uid://bfm3ltbisc2as" path="res://asset/playerGrey_walk2.png" id="2_g54n0"]
+[ext_resource type="Texture2D" uid="uid://blkoajhhmppdo" path="res://asset/pixil-frame-0 (1).png" id="2_p10o5"]
+[ext_resource type="Texture2D" uid="uid://fu3uv8gabo82" path="res://asset/playerGrey_up1.png" id="5_04nvt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m6bqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p10o5")
+}],
+"loop": true,
+"name": &"email",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rmmx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g54n0")
+}],
+"loop": true,
+"name": &"traveler",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_04nvt")
+}],
+"loop": true,
+"name": &"traveler_exhausted",
+"speed": 5.0
+}]
