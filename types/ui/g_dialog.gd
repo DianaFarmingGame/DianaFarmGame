@@ -4,13 +4,18 @@ class_name GDialog extends Window
 signal resolved(result)
 
 var margin: MarginContainer
+var panel: PanelContainer
 var is_resolved = false
 
 
 func _init(ptitle: String) -> void:
 	title = ptitle
+	panel = PanelContainer.new()
+	panel.anchors_preset = Control.PRESET_FULL_RECT
+	panel.theme_type_variation = &"TabContainer"
 	margin = GUI.Margin(8)
-	add_child(margin)
+	panel.add_child(margin)
+	add_child(panel)
 
 
 func set_inner(items := []) -> void:
@@ -21,15 +26,12 @@ func set_inner(items := []) -> void:
 
 
 func open() -> void:
-	popup_centered_clamped(margin.get_minimum_size())
+	popup_centered_clamped(panel.get_minimum_size())
 
 
 func do_resolve(result = null) -> void:
-	if not is_resolved:
-		is_resolved = true
-		emit_signal("resolved", result)
+	if is_inside_tree():
+		if not is_resolved:
+			is_resolved = true
+			resolved.emit(result)
 
-
-func _prompt_confirm(edit: LineEdit) -> void:
-	do_resolve(edit.text)
-	visible = false

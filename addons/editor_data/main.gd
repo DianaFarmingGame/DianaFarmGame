@@ -13,8 +13,8 @@ func _ready():
 	tabs.connect("tab_changed", Callable(self, "_on_tab_changed"))
 	var popup := GMenuPopup.new()
 	popup.set_menu([
-		GMenu.Item("刷新所有数据", self, "update_list"),
-		GMenu.Item("刷新当前数据", self, "update_current"),
+		GMenu.Item("刷新所有数据", update_list),
+		GMenu.Item("刷新当前数据", update_current),
 	])
 	add_child(popup)
 	tabs.set_popup(popup)
@@ -61,14 +61,14 @@ func update_current() -> void:
 			tab.remove_child(child)
 			child.queue_free()
 		var db_path := (dbs[idx - 1] as GameDB).resource_path
-		var res := ResourceLoader.load(db_path, "", ResourceLoader.CACHE_MODE_REPLACE)
+		var res := ResourceLoader.load(db_path, "", ResourceLoader.CACHE_MODE_IGNORE)
 		dbs[idx - 1] = res
 		res.take_over_path(db_path)
 		_prepare_tab(idx)
 
 
-func _get_editor_icon(name: String) -> Texture2D:
-	return editor_interface.get_base_control().get_icon(name, "EditorIcons")
+func _get_editor_icon(pname: String) -> Texture2D:
+	return editor_interface.get_base_control().get_icon(pname, "EditorIcons")
 
 
 func _prepare_tab(idx: int) -> void:
@@ -76,7 +76,7 @@ func _prepare_tab(idx: int) -> void:
 		var db := dbs[idx - 1] as GameDB
 		var tab := tabs.get_child(idx) as PanelContainer
 		if tab.get_child_count() == 0:
-			tab.add_child(db.is_ctrl_pressed(editor_interface))
+			tab.add_child(db.get_control(editor_interface))
 
 
 func _on_tab_changed(idx: int) -> void:

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Tile" load_steps=5 format=3 uid="uid://rvft5oj7gpui"]
+
+[ext_resource type="Script" path="res://types/tile/tile_mask_item.gd" id="1_1fojs"]
+[ext_resource type="Script" path="res://types/tile/tile.gd" id="1_mordj"]
+
+[sub_resource type="Resource" id="Resource_a6e0h"]
+script = ExtResource("1_1fojs")
+size = Vector2(1, 1)
+data = [true]
+pos = Vector2(1, 1)
+
+[sub_resource type="Resource" id="Resource_3qeie"]
+script = ExtResource("1_1fojs")
+size = Vector2(1, 1)
+data = [false]
+pos = Vector2(1, 2)
+
+[resource]
+script = ExtResource("1_mordj")
+name = "Block1"
+tags = []
+src_img = "res://asset/20231003-005105.jpeg"
+block_size = Vector2(1, 1)
+tile_size = Vector2(16, 16)
+mask_size = Vector2(1, 1)
+mask_set = [SubResource("Resource_a6e0h"), SubResource("Resource_3qeie")]

@@ -1,11 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqb0iwoa2fdum"]
+[gd_scene load_steps=12 format=3 uid="uid://cqb0iwoa2fdum"]
 
 [ext_resource type="Script" path="res://types/ui/g_menu_bar/g_menu_bar.gd" id="1"]
 [ext_resource type="Script" path="res://types/tile_db/main.gd" id="2"]
 [ext_resource type="Script" path="res://addons/editor_icon/editor_icon_texture.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://c63fqm8m4rsuo" path="res://addons/editor_icon/icons/Save.res" id="3_4olnx"]
+[ext_resource type="Texture2D" uid="uid://dwq3oab7ewxu2" path="res://addons/editor_icon/icons/ActionCopy.res" id="3_hey3e"]
 [ext_resource type="Texture2D" uid="uid://cid44nqek8tp0" path="res://addons/editor_icon/icons/RotateLeft.res" id="5_fv2pf"]
 [ext_resource type="Texture2D" uid="uid://cdfx38riby8db" path="res://addons/editor_icon/icons/ExpandTree.res" id="6_obsfk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw41g"]
+atlas = ExtResource("3_hey3e")
+region = Rect2(0, 0, 16, 16)
+script = ExtResource("3")
+icon_name = "ActionCopy"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bl1m3"]
 atlas = ExtResource("3_4olnx")
@@ -39,77 +46,98 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_type_variation = &"Panel"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 
-[node name="MenuBar" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="MenuBar" type="Control" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("1")
-
-[node name="ToolButton2" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-tooltip_text = "保存数据"
-icon = SubResource("AtlasTexture_bl1m3")
-
-[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-tooltip_text = "刷新数据"
-icon = SubResource("AtlasTexture_53ee3")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 split_offset = 320
 
-[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/VSplitContainer"]
+layout_mode = 2
+theme_type_variation = &"TabContainer"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer/PanelContainer"]
 layout_mode = 2
 split_offset = 240
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 text = "标签"
 
-[node name="TagList" type="ItemList" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer"]
+[node name="TagList" type="ItemList" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-item_count = 2
+item_count = 1
 item_0/text = "所有"
-item_1/text = "无标签"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 text = "瓷砖"
 
-[node name="Control" type="Control" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BtnExpandList" type="Button" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+[node name="NewBtn" type="Button" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "新建Tile"
+icon = SubResource("AtlasTexture_vw41g")
+
+[node name="CloneBtn" type="Button" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "新建Tile"
+icon = SubResource("AtlasTexture_vw41g")
+
+[node name="SaveBtn" type="Button" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+tooltip_text = "保存数据"
+icon = SubResource("AtlasTexture_bl1m3")
+
+[node name="RefreshBtn" type="Button" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "刷新数据"
+icon = SubResource("AtlasTexture_53ee3")
+
+[node name="BtnExpandList" type="Button" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "展开面板"
 toggle_mode = true
 icon = SubResource("AtlasTexture_rsk4q")
 
-[node name="ItemList" type="ItemList" parent="VBoxContainer/VSplitContainer/HSplitContainer/VBoxContainer2"]
+[node name="TileList" type="ItemList" parent="VBoxContainer/VSplitContainer/PanelContainer/HSplitContainer/VBoxContainer2"]
+unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
+max_columns = 0
+icon_mode = 0
+fixed_icon_size = Vector2i(48, 48)
 
 [node name="EditorView" type="PanelContainer" parent="VBoxContainer/VSplitContainer"]
 unique_name_in_owner = true

@@ -1,31 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcd3tdfvoj8yd"]
+[gd_scene load_steps=9 format=3 uid="uid://dcd3tdfvoj8yd"]
 
 [ext_resource type="Script" path="res://types/tile/mask_set_popup.gd" id="1_v2ei4"]
 [ext_resource type="Script" path="res://types/ui/g_bitmask.gd" id="2_svoxb"]
 [ext_resource type="Script" path="res://addons/editor_icon/editor_icon_texture.gd" id="3_qrn3l"]
-
-[sub_resource type="Image" id="Image_eikx8"]
-data = {
-"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 181, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 128, 225, 225, 225, 127, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 180, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="ImageTexture" id="ImageTexture_0qdmr"]
-image = SubResource("Image_eikx8")
+[ext_resource type="Texture2D" uid="uid://cu4ik8ykjmfic" path="res://addons/editor_icon/icons/TileSet.res" id="3_wp1qv"]
+[ext_resource type="Script" path="res://types/ui/g_atlas_edit/g_atlas_edit.gd" id="4_dcvr2"]
+[ext_resource type="Texture2D" uid="uid://dixemq5kk1ivi" path="res://icon.png" id="4_wpyxn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rkks"]
-atlas = SubResource("ImageTexture_0qdmr")
+atlas = ExtResource("3_wp1qv")
 region = Rect2(0, 0, 16, 16)
 script = ExtResource("3_qrn3l")
 icon_name = "TileSet"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hcnd"]
+atlas = ExtResource("4_wpyxn")
+region = Rect2(64, 16, 16, 16)
+
 [node name="MaskSetPopup" type="Window"]
 title = "编辑掩码"
 initial_position = 1
-size = Vector2i(176, 150)
+size = Vector2i(180, 282)
 wrap_controls = true
 script = ExtResource("1_v2ei4")
 
@@ -65,13 +60,25 @@ script = ExtResource("2_svoxb")
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_vertical = 1
 text = "瓷砖"
 
-[node name="TileBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TileBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Select..."
 icon = SubResource("AtlasTexture_6rkks")
+
+[node name="TilePreview" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1hcnd")
+stretch_mode = 5
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -89,3 +96,11 @@ text = "取消"
 unique_name_in_owner = true
 layout_mode = 2
 text = "确定"
+
+[node name="TileDialog" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_dcvr2")

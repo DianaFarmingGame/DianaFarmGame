@@ -10,23 +10,23 @@ static func Margin(margin: int, items := []) -> MarginContainer:
 	return with_append(with_fill(node), items) as MarginContainer
 
 
-static func VBox(items := [], align := 0) -> VBoxContainer:
+static func VBox(items := [], align := BoxContainer.ALIGNMENT_BEGIN) -> VBoxContainer:
 	var node := VBoxContainer.new()
 	node.alignment = align
 	return with_append(node, items) as VBoxContainer
 
 
-static func HBox(items := [], align := 0) -> HBoxContainer:
+static func HBox(items := [], align := BoxContainer.ALIGNMENT_BEGIN) -> HBoxContainer:
 	var node := HBoxContainer.new()
 	node.alignment = align
 	return with_append(node, items) as HBoxContainer
 
 
-static func GButton(text: String, target = null, handle := "", argv := []) -> Button:
+static func GButton(text: String, handle = null) -> Button:
 	var node := Button.new()
 	node.text = text
-	if target:
-		node.connect("pressed", Callable(target, handle).bind(argv))
+	if handle:
+		node.pressed.connect(handle)
 	return node
 
 

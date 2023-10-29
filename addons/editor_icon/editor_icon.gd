@@ -10,11 +10,11 @@ func rsign(texture: EditorIconTexture) -> void:
 	signed_textures.append(weakref(texture))
 
 
-func get_icon(name: String):
+func get_icon(pname: String):
 	if editor_interface:
 		var control = editor_interface.get_base_control()
-		if control.has_theme_icon(name, "EditorIcons"):
-			return editor_interface.get_base_control().get_theme_icon(name, "EditorIcons")
+		if control.has_theme_icon(pname, "EditorIcons"):
+			return editor_interface.get_base_control().get_theme_icon(pname, "EditorIcons")
 	return null
 
 

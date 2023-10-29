@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dj5klklqc4u1"]
+
+[ext_resource type="Script" path="res://types/tile/mask_cfg.gd" id="1_vpuxe"]
+[ext_resource type="Script" path="res://types/ui/g_bitmask.gd" id="2_lots2"]
+[ext_resource type="Texture2D" uid="uid://8t7o4cpwt5k3" path="res://addons/editor_icon/icons/Edit.res" id="3_t5abw"]
+[ext_resource type="Script" path="res://addons/editor_icon/editor_icon_texture.gd" id="4_iafej"]
+[ext_resource type="Texture2D" uid="uid://b3ademcasmkb6" path="res://addons/editor_icon/icons/Remove.res" id="5_8kscl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uada"]
+resource_local_to_scene = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqswx"]
+atlas = ExtResource("3_t5abw")
+region = Rect2(0, 0, 16, 16)
+script = ExtResource("4_iafej")
+icon_name = "Edit"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyb30"]
+atlas = ExtResource("5_8kscl")
+region = Rect2(0, 0, 16, 16)
+script = ExtResource("4_iafej")
+icon_name = "Remove"
+
+[node name="mask_cfg" type="HBoxContainer"]
+script = ExtResource("1_vpuxe")
+
+[node name="BitMask" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("2_lots2")
+
+[node name="Texture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_0uada")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Edit" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+icon = SubResource("AtlasTexture_xqswx")
+
+[node name="Delete" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+icon = SubResource("AtlasTexture_cyb30")

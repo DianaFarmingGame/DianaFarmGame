@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Tile" load_steps=4 format=3 uid="uid://di170laefl4yg"]
+
+[ext_resource type="Script" path="res://types/tile/tile.gd" id="1_qjfa0"]
+[ext_resource type="Script" path="res://types/tile/tile_mask_item.gd" id="1_u8o75"]
+
+[sub_resource type="Resource" id="Resource_j01a1"]
+script = ExtResource("1_u8o75")
+size = Vector2(1, 1)
+data = [true]
+pos = Vector2(4, 1)
+
+[resource]
+script = ExtResource("1_qjfa0")
+name = "草地"
+tags = ["base"]
+src_img = "res://asset/basictiles.png"
+block_size = Vector2(1, 1)
+tile_size = Vector2(16, 16)
+mask_size = Vector2(1, 1)
+mask_set = [SubResource("Resource_j01a1")]
