@@ -18,6 +18,10 @@ config/icon="res://icon.png"
 [autoload]
 
 EditorIcon="*res://addons/editor_icon/editor_icon.gd"
+traveler="*res://types/user/traveler.tscn"
+ui="*res://UI.tscn"
+ConfigLoader="*res://config/load_config.gd"
+item_dic="*res://types/item/item_dictionary.gd"
 
 [debug]
 

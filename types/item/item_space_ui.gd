@@ -1,16 +1,17 @@
 extends GridContainer
 
-@export var space: ItemSpace
+@export var space: ItemSpace 
 
 var highlight_slot: TextureButton
+var use_item
 
 func _ready():
 	space.connect("items_changed", Callable(self, "on_items_changed"))
 	space.init()
 	for item_index in space.items.size():
 		updata_space(item_index)
-		
-func _process(delta):
+
+func _input(event):
 	if space.space_name == "short_cut":
 		if Input.is_action_pressed("0"):
 			change_used(9)
@@ -57,5 +58,10 @@ func add_item(item: Node) -> bool:
 func change_used(index: int):
 	if highlight_slot != null:
 		highlight_slot.button_pressed = false
+		if highlight_slot.get_index() == index:
+			use_item = null
+			highlight_slot = null
+			return
 	highlight_slot = get_child(index)
 	highlight_slot.button_pressed = true
+	use_item = space.get_item(index)

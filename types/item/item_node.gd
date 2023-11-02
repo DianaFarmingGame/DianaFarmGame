@@ -38,3 +38,12 @@ func _on_TextureRect_mouse_entered():
 
 func _on_TextureRect_mouse_exited():
 	$Name.hide()
+
+func _input(event):
+	# 检测鼠标右键是否按下
+	if event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_RIGHT and event.pressed:
+		var rect = get_rect()
+		rect.position += get_screen_position()
+		# 检测鼠标是否在当前节点上
+		if rect.has_point(event.position):
+			traveler.use(self)

@@ -6,20 +6,19 @@ const ItemNode = preload("res://types/item/item_node.tscn")
 #临时初始化空间中的物品
 @export var space_name: String
 @export var total_volumn: int
-@export var init_types : Array
+@export var init_types : Dictionary
 var items : set = items_set
 
 signal items_changed(indexs)
 
 var used_volumn = 0
 
-#temp
 func init():
 	var init_items = []
 	for type in init_types:
 		var item_node = ItemNode.instantiate()
-		item_node.item = type
-		item_node.num = 1
+		item_node.item = item_dic.item_dictionary.get(type)
+		item_node.num = init_types[type]
 		init_items.append(item_node)
 	while init_items.size() < total_volumn:
 		init_items.append(null)

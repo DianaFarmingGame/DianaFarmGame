@@ -1,22 +1,25 @@
-extends Resource
+extends Control
 
 class_name ItemDictionary
 
-var item_dictionary = {
-	"lark": preload("res://dbs/item/lark.tres"),
-	"email": preload("res://dbs/item/email.tres")
-}
+const ItemNode = preload("res://types/item/item_node.tscn")
 
-func add_item(item: Item):
-	if item is Item:
-		item_dictionary[item.name] = item
+var item_dictionary: Dictionary = {}
+var config_path = "res://config/item.cfg"
+var fields: Array = ["hp","mp","consumable","texture","world_texture"]
 
-func get_item(name: String):
-	return item_dictionary[name]
+func _init():
+	load_config()
 
-func get_all_item():
-	return item_dictionary.values()
-
-func edit_item(name: String, item: Item):
-	item_dictionary.erase(name)
-	add_item(item)
+func load_config():
+	var item_data = ConfigLoader.load_config(config_path,fields)
+	for item in item_data:
+		var item_name = item
+		var hp = item_data[item]["hp"]
+		var mp = item_data[item]["mp"]
+		var consumable = item_data[item]["consumable"]
+		var texture = item_data[item]["texture"]
+		var world_texture = item_data[item]["world_texture"]
+		var item_type = Item.new(item_name,hp,mp,consumable,texture,world_texture)
+		item_dictionary[item] = item_type
+		print(item)

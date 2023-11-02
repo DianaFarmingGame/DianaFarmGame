@@ -2,11 +2,7 @@ extends Resource
 
 class_name CraftTable
 
-var lark = preload("res://dbs/item/lark.tres")
-
-var formulas = {
-	"email+weixing" : [lark]
-}
+var formulas = {}
 
 func get_craft_result(input: String):
 	print(input)

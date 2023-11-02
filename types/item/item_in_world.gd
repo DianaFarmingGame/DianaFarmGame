@@ -2,12 +2,14 @@ extends Node2D
 
 const ItemNode = preload("res://types/item/item_node.tscn")
 
-@export var item: Item
+@export var item_name: String
+var item: Item
 var num = 1
 var can_collect = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	item = item_dic.item_dictionary.get(item_name)
 	$animation.play(item.name)
 	$Label.text = item.name
 	$Label.hide()
@@ -17,7 +19,7 @@ func _ready():
 func _process(delta):
 	if can_collect && Input.is_action_pressed("universal"):
 		var item_instance = gen_item_instance()
-		$"../ui/Package/ItemSpace".add_item(item_instance)
+		ui.get_node("Package/ItemSpace").add_item(item_instance)
 		self.queue_free()
 		
 

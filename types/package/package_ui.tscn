@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://xmttbatphjit"]
+[gd_scene load_steps=8 format=3 uid="uid://xmttbatphjit"]
 
 [ext_resource type="Script" path="res://types/package/package_ui.gd" id="1"]
 [ext_resource type="Script" path="res://types/item/item_slot.gd" id="2"]
 [ext_resource type="Script" path="res://types/item/item_space_ui.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://th5firkgojpg" path="res://asset/20231007-200214.jpeg" id="4"]
 [ext_resource type="Resource" uid="uid://b5pixhmtrq7wf" path="res://dbs/item/package_item.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://bw7nlnpgqc6gh" path="res://asset/20231030-195740.jpeg" id="6_36voj"]
+[ext_resource type="Script" path="res://types/package/Waste.gd" id="7_j6bm1"]
 
 [node name="Panel" type="Panel"]
 anchors_preset = 8
@@ -206,3 +208,12 @@ script = ExtResource("2")
 layout_mode = 2
 texture_normal = ExtResource("4")
 script = ExtResource("2")
+
+[node name="Waste" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 322.0
+offset_right = 337.0
+offset_bottom = 389.0
+texture = ExtResource("6_36voj")
+script = ExtResource("7_j6bm1")

@@ -16,10 +16,13 @@ func set_num(value):
 	$Num.max_value = value
 	
 
-func _on_Button_pressed():
-	print(num)
+func _on_check_pressed():
 	emit_signal("check", num)
 	self.queue_free()
 
 func _on_num_value_changed(value):
 	num = value
+
+func _on_cancel_pressed():
+	emit_signal("check", 0)
+	self.queue_free()

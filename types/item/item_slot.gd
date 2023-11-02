@@ -32,6 +32,8 @@ func _drop_data(_position, data):
 		move_window.set_position(Vector2.ZERO)
 		get_tree().get_root().add_child(move_window)
 		var move_num = await move_window.check
+		if move_num == 0:
+			return
 		if move_num < data.item.num:
 			var move_item = ItemNode.instantiate()
 			move_item.item = data.item.item
@@ -47,9 +49,7 @@ func _drop_data(_position, data):
 		data.space.set_item(data.item_index, null)
 
 func _on_button_pressed():
-	if get_parent().highlight_slot != null:
-		get_parent().highlight_slot.button_pressed = false
-	get_parent().highlight_slot = self
+	get_parent().change_used(get_index())
 	
 func need_select(origin, source):
 	# 需要弹出数量选择窗口

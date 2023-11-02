@@ -1,10 +1,27 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://c3mi3uk3b75r7"]
+[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://c3mi3uk3b75r7"]
 
 [ext_resource type="Texture2D" uid="uid://ssupxini1hwp" path="res://asset/pixil-frame-0.png" id="1_m6bqy"]
-[ext_resource type="Texture2D" uid="uid://daa4lm1qqgx6h" path="res://asset/playerGrey_walk1.png" id="1_rmmx8"]
-[ext_resource type="Texture2D" uid="uid://bfm3ltbisc2as" path="res://asset/playerGrey_walk2.png" id="2_g54n0"]
 [ext_resource type="Texture2D" uid="uid://blkoajhhmppdo" path="res://asset/pixil-frame-0 (1).png" id="2_p10o5"]
-[ext_resource type="Texture2D" uid="uid://fu3uv8gabo82" path="res://asset/playerGrey_up1.png" id="5_04nvt"]
+[ext_resource type="Texture2D" uid="uid://d021oe3kuxqff" path="res://asset/人物/糖糖/糖糖站立_0000.png" id="3_2q04g"]
+[ext_resource type="Texture2D" uid="uid://bjgx4bdjxuv8v" path="res://asset/人物/糖糖/糖糖站立_0001.png" id="4_ddl06"]
+[ext_resource type="Texture2D" uid="uid://dmv57cpkec0co" path="res://asset/人物/糖糖/糖糖站立_0002.png" id="5_c6ghv"]
+[ext_resource type="Texture2D" uid="uid://nhy0rdjgmrl6" path="res://asset/人物/糖糖/糖糖站立_0003.png" id="6_xlyhi"]
+[ext_resource type="Texture2D" uid="uid://cgme2y7xe2dmq" path="res://asset/人物/糖糖/糖糖挖地_0000.png" id="7_dr2u0"]
+[ext_resource type="Texture2D" uid="uid://c7nhr7ejj5sd3" path="res://asset/人物/糖糖/糖糖走路_0000.png" id="7_qdlt7"]
+[ext_resource type="Texture2D" uid="uid://bs3mik6ss0fy1" path="res://asset/人物/糖糖/糖糖走路_0001.png" id="8_bdfbh"]
+[ext_resource type="Texture2D" uid="uid://bosurangarul7" path="res://asset/人物/糖糖/糖糖挖地_0001.png" id="8_m8rgd"]
+[ext_resource type="Texture2D" uid="uid://dy7yejbpg7d1s" path="res://asset/人物/糖糖/糖糖挖地_0002.png" id="9_6u0gu"]
+[ext_resource type="Texture2D" uid="uid://1ghm271uwn4r" path="res://asset/人物/糖糖/糖糖走路_0002.png" id="9_unlev"]
+[ext_resource type="Texture2D" uid="uid://cfid3pwyqfhdx" path="res://asset/人物/糖糖/糖糖走路_0003.png" id="10_t3aga"]
+[ext_resource type="Texture2D" uid="uid://hau71wble6hb" path="res://asset/人物/糖糖/糖糖挖地_0003.png" id="10_vh3cb"]
+[ext_resource type="Texture2D" uid="uid://cwclkujgnpvgx" path="res://asset/人物/糖糖/糖糖挖地_0004.png" id="11_lken8"]
+[ext_resource type="Texture2D" uid="uid://dodmg8b310nhx" path="res://asset/人物/糖糖/糖糖走路_0004.png" id="11_vxlph"]
+[ext_resource type="Texture2D" uid="uid://kwmm5nmp0vyd" path="res://asset/人物/糖糖/糖糖走路_0005.png" id="12_r4yos"]
+[ext_resource type="Texture2D" uid="uid://b8wsi1xtch18k" path="res://asset/人物/糖糖/糖糖挖地_0005.png" id="12_yolj6"]
+[ext_resource type="Texture2D" uid="uid://b7t1tulf1sgs0" path="res://asset/人物/糖糖/糖糖走路_0006.png" id="13_aarok"]
+[ext_resource type="Texture2D" uid="uid://casa3qx8dw85d" path="res://asset/人物/糖糖/糖糖挖地_0006.png" id="13_kjmvx"]
+[ext_resource type="Texture2D" uid="uid://d1wqa6g7t4xb8" path="res://asset/人物/糖糖/糖糖挖地_0007.png" id="14_5wc1c"]
+[ext_resource type="Texture2D" uid="uid://cqgc54twm1coi" path="res://asset/人物/糖糖/糖糖走路_0007.png" id="14_jwd10"]
 
 [resource]
 animations = [{
@@ -21,20 +38,93 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_rmmx8")
+"texture": ExtResource("3_2q04g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_g54n0")
+"texture": ExtResource("4_ddl06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c6ghv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xlyhi")
 }],
 "loop": true,
-"name": &"traveler",
+"name": &"traveler_exhausted",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_04nvt")
+"texture": ExtResource("7_dr2u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m8rgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6u0gu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vh3cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lken8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yolj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kjmvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5wc1c")
 }],
 "loop": true,
-"name": &"traveler_exhausted",
+"name": &"traveler_hoeing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2q04g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ddl06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c6ghv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xlyhi")
+}],
+"loop": true,
+"name": &"traveler_stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qdlt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bdfbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_unlev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t3aga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vxlph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_r4yos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aarok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jwd10")
+}],
+"loop": true,
+"name": &"traveler_walk",
 "speed": 5.0
 }]
