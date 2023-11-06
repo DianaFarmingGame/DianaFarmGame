@@ -1,30 +1,112 @@
-[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://c3mi3uk3b75r7"]
+[gd_resource type="SpriteFrames" load_steps=59 format=3 uid="uid://c3mi3uk3b75r7"]
 
 [ext_resource type="Texture2D" uid="uid://ssupxini1hwp" path="res://asset/pixil-frame-0.png" id="1_m6bqy"]
+[ext_resource type="Texture2D" uid="uid://c6vngd6d2v5bi" path="res://asset/人物/嘉然/小恶魔站立_0000.png" id="1_tvu76"]
 [ext_resource type="Texture2D" uid="uid://blkoajhhmppdo" path="res://asset/pixil-frame-0 (1).png" id="2_p10o5"]
+[ext_resource type="Texture2D" uid="uid://kuamts2fh0ru" path="res://asset/人物/嘉然/小恶魔站立_0001.png" id="2_y8b4p"]
 [ext_resource type="Texture2D" uid="uid://d021oe3kuxqff" path="res://asset/人物/糖糖/糖糖站立_0000.png" id="3_2q04g"]
+[ext_resource type="Texture2D" uid="uid://0cfqrqe2orn" path="res://asset/人物/嘉然/小恶魔站立_0002.png" id="3_mgxyk"]
 [ext_resource type="Texture2D" uid="uid://bjgx4bdjxuv8v" path="res://asset/人物/糖糖/糖糖站立_0001.png" id="4_ddl06"]
+[ext_resource type="Texture2D" uid="uid://bq7dmf6se2x7n" path="res://asset/人物/嘉然/小恶魔站立_0003.png" id="4_r3qgt"]
+[ext_resource type="Texture2D" uid="uid://ctlwp0pcijnom" path="res://asset/人物/嘉然/小恶魔行走_0000.png" id="5_6ekhb"]
 [ext_resource type="Texture2D" uid="uid://dmv57cpkec0co" path="res://asset/人物/糖糖/糖糖站立_0002.png" id="5_c6ghv"]
+[ext_resource type="Texture2D" uid="uid://dhaj41jj3hhxo" path="res://asset/人物/嘉然/小恶魔行走_0001.png" id="6_a7cq3"]
 [ext_resource type="Texture2D" uid="uid://nhy0rdjgmrl6" path="res://asset/人物/糖糖/糖糖站立_0003.png" id="6_xlyhi"]
 [ext_resource type="Texture2D" uid="uid://cgme2y7xe2dmq" path="res://asset/人物/糖糖/糖糖挖地_0000.png" id="7_dr2u0"]
+[ext_resource type="Texture2D" uid="uid://b3t4bq26yw6t3" path="res://asset/人物/嘉然/小恶魔行走_0002.png" id="7_h7vcr"]
 [ext_resource type="Texture2D" uid="uid://c7nhr7ejj5sd3" path="res://asset/人物/糖糖/糖糖走路_0000.png" id="7_qdlt7"]
 [ext_resource type="Texture2D" uid="uid://bs3mik6ss0fy1" path="res://asset/人物/糖糖/糖糖走路_0001.png" id="8_bdfbh"]
+[ext_resource type="Texture2D" uid="uid://dxbogmmp3ojtw" path="res://asset/人物/嘉然/小恶魔行走_0003.png" id="8_gj2g0"]
 [ext_resource type="Texture2D" uid="uid://bosurangarul7" path="res://asset/人物/糖糖/糖糖挖地_0001.png" id="8_m8rgd"]
 [ext_resource type="Texture2D" uid="uid://dy7yejbpg7d1s" path="res://asset/人物/糖糖/糖糖挖地_0002.png" id="9_6u0gu"]
 [ext_resource type="Texture2D" uid="uid://1ghm271uwn4r" path="res://asset/人物/糖糖/糖糖走路_0002.png" id="9_unlev"]
+[ext_resource type="Texture2D" uid="uid://cyipw6vaha0rj" path="res://asset/人物/嘉然/小恶魔行走_0004.png" id="9_x8g25"]
+[ext_resource type="Texture2D" uid="uid://c2vryto1o2gmv" path="res://asset/人物/嘉然/小恶魔行走_0005.png" id="10_rb3ef"]
 [ext_resource type="Texture2D" uid="uid://cfid3pwyqfhdx" path="res://asset/人物/糖糖/糖糖走路_0003.png" id="10_t3aga"]
 [ext_resource type="Texture2D" uid="uid://hau71wble6hb" path="res://asset/人物/糖糖/糖糖挖地_0003.png" id="10_vh3cb"]
 [ext_resource type="Texture2D" uid="uid://cwclkujgnpvgx" path="res://asset/人物/糖糖/糖糖挖地_0004.png" id="11_lken8"]
+[ext_resource type="Texture2D" uid="uid://dfsl8qw1f0qx8" path="res://asset/人物/嘉然/小恶魔行走_0006.png" id="11_s5dw1"]
 [ext_resource type="Texture2D" uid="uid://dodmg8b310nhx" path="res://asset/人物/糖糖/糖糖走路_0004.png" id="11_vxlph"]
+[ext_resource type="Texture2D" uid="uid://ct11asrweiiwx" path="res://asset/人物/嘉然/小恶魔行走_0007.png" id="12_0n3mj"]
 [ext_resource type="Texture2D" uid="uid://kwmm5nmp0vyd" path="res://asset/人物/糖糖/糖糖走路_0005.png" id="12_r4yos"]
 [ext_resource type="Texture2D" uid="uid://b8wsi1xtch18k" path="res://asset/人物/糖糖/糖糖挖地_0005.png" id="12_yolj6"]
 [ext_resource type="Texture2D" uid="uid://b7t1tulf1sgs0" path="res://asset/人物/糖糖/糖糖走路_0006.png" id="13_aarok"]
 [ext_resource type="Texture2D" uid="uid://casa3qx8dw85d" path="res://asset/人物/糖糖/糖糖挖地_0006.png" id="13_kjmvx"]
 [ext_resource type="Texture2D" uid="uid://d1wqa6g7t4xb8" path="res://asset/人物/糖糖/糖糖挖地_0007.png" id="14_5wc1c"]
 [ext_resource type="Texture2D" uid="uid://cqgc54twm1coi" path="res://asset/人物/糖糖/糖糖走路_0007.png" id="14_jwd10"]
+[ext_resource type="Texture2D" uid="uid://cdledlne5irf4" path="res://asset/人物/糖糖/糖糖斧头_0000.png" id="15_qf04s"]
+[ext_resource type="Texture2D" uid="uid://c7pqhq1aqr764" path="res://asset/人物/糖糖/糖糖斧头_0001.png" id="16_ff1lm"]
+[ext_resource type="Texture2D" uid="uid://cv5pyvhlxhi3x" path="res://asset/人物/糖糖/糖糖斧头_0002.png" id="17_vposl"]
+[ext_resource type="Texture2D" uid="uid://bmrthy4i2dcjy" path="res://asset/人物/糖糖/糖糖斧头_0003.png" id="18_e5n40"]
+[ext_resource type="Texture2D" uid="uid://deaugdy0ot3d3" path="res://asset/人物/糖糖/糖糖斧头_0004.png" id="19_tjumf"]
+[ext_resource type="Texture2D" uid="uid://b74ekb6dhyxoi" path="res://asset/人物/糖糖/糖糖斧头_0005.png" id="20_dldde"]
+[ext_resource type="Texture2D" uid="uid://ck0goaht1iqfv" path="res://asset/人物/糖糖/糖糖斧头_0006.png" id="21_rs5hl"]
+[ext_resource type="Texture2D" uid="uid://h5vu1gctxrde" path="res://asset/人物/糖糖/糖糖斧头_0007.png" id="22_e0ajx"]
+[ext_resource type="Texture2D" uid="uid://b653654rayv0j" path="res://asset/人物/糖糖/糖糖棍子_0000.png" id="35_vnc7p"]
+[ext_resource type="Texture2D" uid="uid://dhs75w8ltt28b" path="res://asset/人物/糖糖/糖糖棍子_0001.png" id="36_mw78o"]
+[ext_resource type="Texture2D" uid="uid://bjffc5qf623kg" path="res://asset/人物/糖糖/糖糖棍子_0002.png" id="37_5v8g6"]
+[ext_resource type="Texture2D" uid="uid://corxxbepe1w8a" path="res://asset/人物/糖糖/糖糖棍子_0003.png" id="38_b7epo"]
+[ext_resource type="Texture2D" uid="uid://8gasusuxwe8s" path="res://asset/人物/糖糖/糖糖棍子_0004.png" id="39_2ax01"]
+[ext_resource type="Texture2D" uid="uid://rqstn738r7lu" path="res://asset/人物/糖糖/糖糖棍子_0005.png" id="40_sai5j"]
+[ext_resource type="Texture2D" uid="uid://wsbggeoqbx02" path="res://asset/人物/糖糖/糖糖棍子_0006.png" id="41_u6e6x"]
+[ext_resource type="Texture2D" uid="uid://d3nr4qeylmbpd" path="res://asset/人物/糖糖/糖糖棍子_0007.png" id="42_ckta5"]
+[ext_resource type="Texture2D" uid="uid://c8ynl5c3r8q0b" path="res://asset/人物/糖糖/糖糖镐子_0000.png" id="43_bclgx"]
+[ext_resource type="Texture2D" uid="uid://y6qb3rnclq7p" path="res://asset/人物/糖糖/糖糖镐子_0001.png" id="44_j3gr6"]
+[ext_resource type="Texture2D" uid="uid://dtuhjih76jbwq" path="res://asset/人物/糖糖/糖糖镐子_0002.png" id="45_ysrbj"]
+[ext_resource type="Texture2D" uid="uid://brm744lypkv7u" path="res://asset/人物/糖糖/糖糖镐子_0003.png" id="46_qcrcb"]
+[ext_resource type="Texture2D" uid="uid://blkesrm5jhkjo" path="res://asset/人物/糖糖/糖糖镐子_0004.png" id="47_20wr1"]
+[ext_resource type="Texture2D" uid="uid://dl0qpgdlou3bj" path="res://asset/人物/糖糖/糖糖镐子_0005.png" id="48_wmwe6"]
+[ext_resource type="Texture2D" uid="uid://iwky0vau0jdb" path="res://asset/人物/糖糖/糖糖镐子_0006.png" id="49_bljty"]
+[ext_resource type="Texture2D" uid="uid://36a5bmy4g5di" path="res://asset/人物/糖糖/糖糖镐子_0007.png" id="50_7xt2d"]
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tvu76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y8b4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mgxyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r3qgt")
+}],
+"loop": true,
+"name": &"diana_stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6ekhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a7cq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h7vcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gj2g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x8g25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rb3ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s5dw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0n3mj")
+}],
+"loop": true,
+"name": &"diana_walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_m6bqy")
@@ -35,6 +117,35 @@ animations = [{
 "loop": true,
 "name": &"email",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_qf04s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ff1lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vposl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_e5n40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tjumf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dldde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rs5hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_e0ajx")
+}],
+"loop": true,
+"name": &"traveler_chop",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -97,6 +208,64 @@ animations = [{
 }],
 "loop": true,
 "name": &"traveler_stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_vnc7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_mw78o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_5v8g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_b7epo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_2ax01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_sai5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_u6e6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ckta5")
+}],
+"loop": true,
+"name": &"traveler_stick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_bclgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_j3gr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ysrbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qcrcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_20wr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_wmwe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bljty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_7xt2d")
+}],
+"loop": true,
+"name": &"traveler_tap",
 "speed": 5.0
 }, {
 "frames": [{

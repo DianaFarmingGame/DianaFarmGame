@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu55stvykowp7"]
+
+[ext_resource type="Script" path="res://types/user/user.gd" id="1_0f8ul"]
+[ext_resource type="PackedScene" uid="uid://2i14dgh7xwtf" path="res://types/animation/animation.tscn" id="1_xbrlj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3ooc"]
+radius = 55.0
+height = 134.0
+
+[node name="diana" type="Node2D"]
+position = Vector2(523, 322)
+script = ExtResource("1_0f8ul")
+speed = 150
+run_speed = 300
+hp_max = 800
+hp_recover = 10
+mp_max = 270
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_j3ooc")
+
+[node name="animation" parent="." instance=ExtResource("1_xbrlj")]
+animation = &"diana_stand"

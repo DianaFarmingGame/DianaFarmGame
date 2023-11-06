@@ -20,7 +20,7 @@ static func save_config():
 	var config = ConfigFile.new()
 	# 存储一些值。
 	var texture = load("res://asset/20231003-140403.jpeg")
-	var item = Item.new("email",10,10,true,texture,texture)
+	var item = Item.new("email",10,10,true,texture,texture,null,null)
 	config.set_value(item.name, "hp", item.hp)
 	config.set_value(item.name, "mp", item.mp)
 	config.set_value(item.name, "consumable", item.consumable)

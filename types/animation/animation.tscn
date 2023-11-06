@@ -4,4 +4,4 @@
 
 [node name="animation" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_i3mhm")
-animation = &"traveler_hoeing"
+animation = &"traveler_chop"

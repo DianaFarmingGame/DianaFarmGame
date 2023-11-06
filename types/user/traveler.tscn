@@ -14,6 +14,8 @@ speed = 200
 run_speed = 400
 hp_max = 1000
 hp_recover = 10
+mp_max = 270
+player = 1
 metadata/_edit_group_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -22,4 +24,6 @@ metadata/_edit_group_ = true
 shape = SubResource("CapsuleShape2D_lp1pn")
 
 [node name="animation" parent="." instance=ExtResource("2_nkf2y")]
-animation = &"traveler"
+animation = &"traveler_tap"
+
+[connection signal="animation_looped" from="animation" to="." method="_on_animation_animation_looped"]

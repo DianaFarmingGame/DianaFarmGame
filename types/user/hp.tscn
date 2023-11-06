@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dyd7u5imoblhk"]
+[gd_scene format=3 uid="uid://dyh20kc0b50qs"]
 
 [node name="hp" type="ProgressBar"]
 offset_right = 129.0

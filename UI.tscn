@@ -5,47 +5,39 @@
 [ext_resource type="PackedScene" uid="uid://xmttbatphjit" path="res://types/package/package_ui.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://cuqw6ejx1wrm5" path="res://types/user/status.tscn" id="4_m0dpd"]
 
-[node name="UI" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CraftTable" parent="." instance=ExtResource("1")]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 231.0
-offset_top = 111.0
-offset_right = 981.0
-offset_bottom = 450.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="ShortcutPackage" parent="." instance=ExtResource("2")]
-layout_mode = 1
-offset_left = 237.5
-offset_top = 511.0
-offset_right = 743.5
-offset_bottom = 561.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Package" parent="." instance=ExtResource("3")]
-layout_mode = 1
-anchors_preset = 4
-anchor_left = 0.0
-anchor_right = 0.0
-offset_left = 0.0
-offset_top = 78.5
-offset_right = 309.0
-offset_bottom = 482.5
-grow_vertical = 2
+[node name="UI" type="CanvasLayer"]
 
 [node name="status" parent="." instance=ExtResource("4_m0dpd")]
-layout_mode = 1
 offset_left = 37.0
 offset_top = 41.0
 offset_right = 37.0
 offset_bottom = 41.0
+
+[node name="Package" parent="." instance=ExtResource("3")]
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = -225.5
+offset_right = 309.0
+offset_bottom = 178.5
+grow_vertical = 2
+
+[node name="ShortcutPackage" parent="." instance=ExtResource("2")]
+offset_left = -254.5
+offset_top = -97.0
+offset_right = 251.5
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CraftTable" parent="." instance=ExtResource("1")]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -753.0
+offset_top = -193.0
+offset_right = -3.0
+offset_bottom = 146.0
+grow_horizontal = 0
+grow_vertical = 2

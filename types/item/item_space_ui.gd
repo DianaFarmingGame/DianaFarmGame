@@ -47,7 +47,6 @@ func on_items_changed(indexs):
 		updata_space(index)
 
 func add_item(item: Node) -> bool:
-	print("add item")
 	var index = space.get_first_empty_slot()
 	if index == -1:
 		#空间已满

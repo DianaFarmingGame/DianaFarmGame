@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuqw6ejx1wrm5"]
+[gd_scene load_steps=3 format=3 uid="uid://cuqw6ejx1wrm5"]
 
 [ext_resource type="Texture2D" uid="uid://le2xvwmqcsfv" path="res://asset/20231027-194320.jpeg" id="1_tyx4o"]
+[ext_resource type="Texture2D" uid="uid://dka3mo76qdy1i" path="res://asset/20231102-210606.jpeg" id="2_b8i2c"]
 
 [node name="status" type="Control"]
 layout_mode = 3
@@ -10,11 +11,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="hp" type="TextureProgressBar" parent="."]
+[node name="traveler_hp" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 max_value = 1000.0
 value = 100.0
 texture_progress = ExtResource("1_tyx4o")
+texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="diana_hp" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_top = 91.0
+offset_right = 256.0
+offset_bottom = 131.0
+max_value = 1000.0
+value = 100.0
+texture_progress = ExtResource("1_tyx4o")
+texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="traveler_mp" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 40.0
+offset_right = 375.0
+offset_bottom = 93.0
+scale = Vector2(0.667535, 0.708005)
+max_value = 1000.0
+value = 100.0
+texture_progress = ExtResource("2_b8i2c")
+texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="diana_mp" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 134.0
+offset_right = 375.0
+offset_bottom = 187.0
+scale = Vector2(0.667535, 0.708005)
+max_value = 1000.0
+value = 100.0
+texture_progress = ExtResource("2_b8i2c")
 texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
