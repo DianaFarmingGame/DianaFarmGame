@@ -6,15 +6,17 @@ extends Node2D
 @export var hp_recover: int
 @export var mp_max: int
 @export var player: Player
+@export var eat_limit: int
 
 var hp: int : set = hp_change
-var mp: int : set = hp_change
+var mp: int : set = mp_change
 
 var runable: bool = true
 var is_control: bool = false
 var is_follow: bool = false
 # 保持动画不被打断
 var stand_animation: bool = false
+var eat_times = 0
 
 var screen_size
 var follow_player
@@ -30,7 +32,6 @@ func _ready():
 	$animation.play(get_play_animation("stand"))
 	ui.get_node(get_player_status("hp")).value = hp
 	ui.get_node(get_player_status("mp")).value = mp
-	Camera2D
 	# 初始化主控为旅行者,跟随角色为对方
 	if player == Player.TRAVERLER:
 		# 初始化旅行者
@@ -86,7 +87,7 @@ func _process(delta):
 		$animation.play(get_play_animation("stand"))
 		
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+#	position = position.clamp(Vector2.ZERO, screen_size)
 
 func _input(event):
 	# 动画未结束不能进行操作
@@ -120,15 +121,21 @@ func _on_space_press():
 func use(use_item):
 	if use_item != null:
 		var item = use_item.item
-		if item.hp != null:
+		if item.is_food == true:
+			#食物受食用上限影响
+			if eat_times >= eat_limit:
+				return
+			eat_times += 1
+		if item.hp != 0:
 			# 该道具有回复HP能力
 			hp = clamp(hp + item.hp, 0, hp_max)
-		if item.mp != null:
+		if item.mp != 0:
 			# 该道具有回复MP能力
 			mp = clamp(mp + item.mp, 0, mp_max)
 		if item.tool != null:
 			# 该道具为可以使用的工具
 			item.tool.use()
+			mp -= 10
 		if item.blind_box != null:
 			# 该道具为盲盒
 			var gifts = item.blind_box.open()

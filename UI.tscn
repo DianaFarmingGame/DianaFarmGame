@@ -1,43 +1,46 @@
 [gd_scene load_steps=5 format=3 uid="uid://bx0gooj572s8f"]
 
-[ext_resource type="PackedScene" path="res://types/craft/craft_table_ui.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://debs6ic1cs6gj" path="res://types/craft/craft_table_ui.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cq2lwpuipu34e" path="res://types/package/shortcut_package_ui.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://xmttbatphjit" path="res://types/package/package_ui.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://cuqw6ejx1wrm5" path="res://types/user/status.tscn" id="4_m0dpd"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="Control" type="CanvasLayer"]
 
 [node name="status" parent="." instance=ExtResource("4_m0dpd")]
-offset_left = 37.0
-offset_top = 41.0
-offset_right = 37.0
-offset_bottom = 41.0
-
-[node name="Package" parent="." instance=ExtResource("3")]
-anchors_preset = 4
-anchor_left = 0.0
+anchors_preset = 0
 anchor_right = 0.0
-offset_left = 0.0
-offset_top = -225.5
-offset_right = 309.0
-offset_bottom = 178.5
-grow_vertical = 2
-
-[node name="ShortcutPackage" parent="." instance=ExtResource("2")]
-offset_left = -254.5
-offset_top = -97.0
-offset_right = 251.5
-offset_bottom = -47.0
-grow_horizontal = 2
-grow_vertical = 0
+anchor_bottom = 0.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="CraftTable" parent="." instance=ExtResource("1")]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -753.0
-offset_top = -193.0
-offset_right = -3.0
-offset_bottom = 146.0
+offset_left = -814.0
+offset_top = -201.0
+offset_right = -64.0
+offset_bottom = 138.0
 grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ShortcutPackage" parent="." instance=ExtResource("2")]
+offset_left = -224.0
+offset_top = -108.0
+offset_right = 282.0
+offset_bottom = -58.0
+
+[node name="Package" parent="." instance=ExtResource("3")]
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 60.0
+offset_top = -251.0
+offset_right = 369.0
+offset_bottom = 153.0
 grow_vertical = 2

@@ -11,6 +11,8 @@ var consumable: bool = true
 var tool: Node
 #是否为盲盒
 var blind_box: Node
+#是否为食物（受进食次数影响）
+var is_food: bool
 
 #展示相关
 
@@ -20,7 +22,7 @@ var texture: Texture2D
 var world_texture: Texture2D
 
 func _init(name: String, hp: int, mp: int, consumable: bool, texture: Texture2D,
- 		world_texture: Texture2D, tool: Node, blind_box: Node):
+ 		world_texture: Texture2D, tool: Node, blind_box: Node, is_food: bool):
 	self.name = name
 	self.hp = hp
 	self.mp = mp
@@ -29,5 +31,5 @@ func _init(name: String, hp: int, mp: int, consumable: bool, texture: Texture2D,
 	self.world_texture = world_texture
 	self.tool = tool
 	self.blind_box = blind_box
-	
+	self.is_food = is_food
 	

@@ -16,6 +16,7 @@ hp_max = 1000
 hp_recover = 10
 mp_max = 270
 player = 1
+eat_limit = 5
 metadata/_edit_group_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]

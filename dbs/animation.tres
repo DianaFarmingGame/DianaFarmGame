@@ -266,7 +266,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"traveler_tap",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -295,5 +295,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"traveler_walk",
-"speed": 5.0
+"speed": 10.0
 }]

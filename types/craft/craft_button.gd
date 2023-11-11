@@ -12,12 +12,7 @@ func _ready():
 func on_button_pressed():
 	var input_space = $"../InputSlot".space
 	var input_items = input_space.items
-	var input_item_name_list = PackedStringArray()
-	for item in input_items:
-		if item != null:
-			input_item_name_list.append(item.item.name)
-	var item_names = "+".join(input_item_name_list)
-	var output_items = craft_table.get_craft_result(item_names)
+	var output_items = craft_table.get_craft_result(input_items)
 	var output_space = $"../OutputSlot".space
 	if output_items != null:
 		#如果输出栏中有物品未取出，则合成失败
