@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://v63vbemp01w2"]
+[gd_scene load_steps=3 format=3 uid="uid://v63vbemp01w2"]
 
 [ext_resource type="Texture2D" uid="uid://ddneoaet1oey" path="res://asset/20231106-193707.jpeg" id="2_83vmp"]
 [ext_resource type="PackedScene" uid="uid://b14i808eq4xqn" path="res://types/item/item_in_world.tscn" id="3_c787g"]
-[ext_resource type="Script" path="res://types/common/camera.gd" id="3_djtxn"]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -24,6 +23,3 @@ offset_bottom = 456.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_83vmp")
-
-[node name="Camera" type="Camera2D" parent="."]
-script = ExtResource("3_djtxn")

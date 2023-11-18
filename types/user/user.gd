@@ -1,15 +1,16 @@
-extends Node2D
+extends CharacterBody2D
 
+@export var player: Player
 @export var speed: int
 @export var run_speed: int
-@export var hp_max: int
-@export var hp_recover: int
-@export var mp_max: int
-@export var player: Player
+@export var hp_max: int: set = hp_max_change
+@export var mp_max: int: set = mp_max_change
 @export var eat_limit: int
+@export var init_money: int
 
 var hp: int : set = hp_change
 var mp: int : set = mp_change
+var money: int : set = money_change
 
 var runable: bool = true
 var is_control: bool = false
@@ -29,19 +30,23 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	hp = hp_max
 	mp = mp_max
+	money = init_money
 	$animation.play(get_play_animation("stand"))
-	ui.get_node(get_player_status("hp")).value = hp
-	ui.get_node(get_player_status("mp")).value = mp
+#	ui.get_node(get_player_status("hp")).value = hp
+#	ui.get_node(get_player_status("mp")).value = mp
 	# 初始化主控为旅行者,跟随角色为对方
 	if player == Player.TRAVERLER:
 		# 初始化旅行者
 		is_control = true
 		follow_player = diana
+		$Camera2D.enabled = true
 		traveler_connect()
 	else:
 		# 初始化Diana
 		follow_player = traveler
+		$Camera2D.enabled = false
 		diana_connect()
+	switch_status()
 	
 
 func _process(delta):
@@ -60,8 +65,8 @@ func _process(delta):
 			runable = true
 			$animation.play(get_play_animation("stand"))
 		return
-	var velocity = Vector2.ZERO # The player's movement vector.
 	var animation = get_play_animation("stand")
+	velocity = Vector2(0,0)
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 		$animation.flip_h = true
@@ -76,18 +81,12 @@ func _process(delta):
 	if velocity.length() > 0:
 		if Input.is_action_pressed("run"):
 			velocity = velocity.normalized() * run_speed
-			hp = clamp(hp - 10, 0, hp_max)
-			if hp == 0:
-				runable = false
 		else:
 			velocity = velocity.normalized() * speed
 		$animation.play(get_play_animation("walk"))
 	else:
-		hp = clamp(hp + hp_recover, 0, hp_max)
 		$animation.play(get_play_animation("stand"))
-		
-	position += velocity * delta
-#	position = position.clamp(Vector2.ZERO, screen_size)
+	move_and_slide()
 
 func _input(event):
 	# 动画未结束不能进行操作
@@ -103,15 +102,30 @@ func _input(event):
 	if event.is_action_pressed("universal"):
 		_on_space_press()
 
+# 以下是状态相关
 func hp_change(value):
-	if value != hp:
-		hp = value
-		ui.get_node(get_player_status("hp")).value = hp
+	hp = value
+	ui.get_node(get_player_status("hp")).value = hp
 
 func mp_change(value):
-	if value != mp:
-		mp = value
-		ui.get_node(get_player_status("mp")).value = mp
+	mp = value
+	ui.get_node(get_player_status("mp")).value = mp
+	print(str(player) + " mp_change " + str(ui.get_node(get_player_status("mp")).value))
+
+func hp_max_change(value):
+	hp_max = value
+	ui.get_node(get_player_status("hp")).max_value = hp_max
+
+func mp_max_change(value):
+	mp_max = value
+	ui.get_node(get_player_status("mp")).max_value = mp_max
+	print(str(player) + " max_change " + str(ui.get_node(get_player_status("mp")).max_value))
+
+func money_change(value):
+	# 金钱两个人共用一份
+	if player == Player.TRAVERLER:
+		money = value
+		ui.get_node("status/money/num").text = str(money)
 
 # 按下任意键后的行为
 func _on_space_press():
@@ -158,59 +172,65 @@ func get_play_animation(animation: String) -> String:
 # 根据当前角色获取状态名称
 func get_player_status(status: String) -> String:
 	if player == Player.DIANA:
-		return "status/diana_" + status;
+		return "status/diana/" + status;
 	else:
-		return "status/traveler_" + status;
+		return "status/traveler/" + status;
 
 # 变更主控角色
 func change_control_player():
 	is_control = !is_control
+	$Camera2D.enabled = !$Camera2D.enabled
+	switch_status()
 
 # 跟随角色
 func follow(delta):
 	# 计算角色与目标之间的距离和方向
-	var velocity = Vector2.ZERO
 	var target_vector = (follow_player.global_position - global_position).normalized()
 	var distance = follow_player.global_position.distance_to(global_position)
 	# 如果角色与目标之间的距离小于某个值，则停止移动
-	if distance < 10:
+	if distance < 40:
 		return
 	else:
 		# 否则，设置角色的速度，以向目标移动
 		velocity = target_vector * speed
-		# todo 碰撞体处理
-#		$CharacterBody2D.velocity = velocity
-#		$CharacterBody2D.move_and_slide()
 		if velocity.x > 0:
 			$animation.flip_h = true
 		else:
 			$animation.flip_h = false
-		position += velocity * delta
-		position = position.clamp(Vector2.ZERO, screen_size)
+		move_and_slide()
 
 # 使用锄头
 func _on_using_hoe():
-	if is_control and player == Player.TRAVERLER:
+	# 从配置中获取
+	var mp_consume = 10
+	if is_control and player == Player.TRAVERLER and mp > mp_consume:
 		stand_animation = true
 		$animation.play(get_play_animation("hoeing"))
+		mp = clamp(mp - mp_consume, 0, mp_max)
 
 # 使用斧头
 func _on_using_axe():
-	if is_control and player == Player.TRAVERLER:
+	var mp_consume = 10
+	if is_control and player == Player.TRAVERLER and mp > mp_consume:
 		stand_animation = true
 		$animation.play(get_play_animation("chop"))
+		mp = clamp(mp - mp_consume, 0, mp_max)
 
 # 使用棍棒
 func _on_using_stick():
-	if is_control and player == Player.TRAVERLER:
+	var mp_consume = 10
+	if is_control and player == Player.TRAVERLER and mp > mp_consume:
 		stand_animation = true
 		$animation.play(get_play_animation("stick"))
+		mp = clamp(mp - mp_consume, 0, mp_max)
 
 # 使用镐子
 func _on_using_pickaxe():
-	if is_control and player == Player.TRAVERLER:
+	var mp_consume = 10
+	if is_control and player == Player.TRAVERLER and mp > mp_consume:
 		stand_animation = true
 		$animation.play(get_play_animation("tap"))
+		mp = clamp(mp - mp_consume, 0, mp_max)
 
 # 订阅Diana的信号
 func diana_connect():
@@ -226,3 +246,15 @@ func traveler_connect():
 
 func _on_animation_animation_looped():
 	stand_animation = false
+
+func switch_status():
+	if player == Player.DIANA:
+		if is_control:
+			ui.get_node("status/diana").show()
+		else:
+			ui.get_node("status/diana").hide()
+	else:
+		if is_control:
+			ui.get_node("status/traveler").show()
+		else:
+			ui.get_node("status/traveler").hide()

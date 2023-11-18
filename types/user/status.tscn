@@ -1,11 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuqw6ejx1wrm5"]
 
 [ext_resource type="Texture2D" uid="uid://c32qenoj221wr" path="res://asset/ui/血条底.png" id="1_ar6cx"]
-[ext_resource type="Texture2D" uid="uid://le2xvwmqcsfv" path="res://asset/20231027-194320.jpeg" id="1_tyx4o"]
-[ext_resource type="Texture2D" uid="uid://dka3mo76qdy1i" path="res://asset/20231102-210606.jpeg" id="2_b8i2c"]
 [ext_resource type="Texture2D" uid="uid://dvkjcc86mvi2w" path="res://asset/ui/血条.png" id="2_geg6v"]
 [ext_resource type="Texture2D" uid="uid://bkg8vwcqdd62a" path="res://asset/ui/精力条底.png" id="4_awohl"]
+[ext_resource type="Texture2D" uid="uid://cptrawtcw3ryb" path="res://asset/ui/金钱栏.png" id="5_a5a31"]
 [ext_resource type="Texture2D" uid="uid://cnqsk5b5h6j0g" path="res://asset/ui/精力条.png" id="5_oqcgb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_42c66"]
+font_size = 13
 
 [node name="status" type="Control"]
 layout_mode = 3
@@ -15,46 +17,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="traveler_hp" type="TextureProgressBar" parent="."]
+[node name="traveler" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hp" type="TextureProgressBar" parent="traveler"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 max_value = 1000.0
-value = 170.0
+value = 500.0
 texture_under = ExtResource("1_ar6cx")
 texture_progress = ExtResource("2_geg6v")
-texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
+texture_progress_offset = Vector2(14, 4)
+radial_center_offset = Vector2(10.05, 2.08165e-12)
 
-[node name="diana_hp" type="TextureProgressBar" parent="."]
-visible = false
+[node name="mp" type="TextureProgressBar" parent="traveler"]
 layout_mode = 0
-offset_top = 91.0
-offset_right = 256.0
-offset_bottom = 131.0
-max_value = 1000.0
+offset_top = 17.0
+offset_right = 640.0
+offset_bottom = 377.0
+max_value = 270.0
 value = 100.0
-texture_progress = ExtResource("1_tyx4o")
-texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
+texture_under = ExtResource("4_awohl")
+texture_progress = ExtResource("5_oqcgb")
+texture_progress_offset = Vector2(14, 4)
 
-[node name="traveler_mp" type="TextureProgressBar" parent="."]
+[node name="diana" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hp" type="TextureProgressBar" parent="diana"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
+max_value = 1000.0
+value = 500.0
+texture_under = ExtResource("1_ar6cx")
+texture_progress = ExtResource("2_geg6v")
+texture_progress_offset = Vector2(14, 4)
+radial_center_offset = Vector2(10.05, 2.08165e-12)
+
+[node name="mp" type="TextureProgressBar" parent="diana"]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 640.0
+offset_bottom = 377.0
 max_value = 1000.0
 value = 100.0
 texture_under = ExtResource("4_awohl")
 texture_progress = ExtResource("5_oqcgb")
-texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
+texture_progress_offset = Vector2(14, 4)
 
-[node name="diana_mp" type="TextureProgressBar" parent="."]
-visible = false
+[node name="money" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 0
+texture = ExtResource("5_a5a31")
+expand_mode = 3
+
+[node name="num" type="Label" parent="money"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 134.0
-offset_right = 375.0
-offset_bottom = 187.0
-scale = Vector2(0.667535, 0.708005)
-max_value = 1000.0
-value = 100.0
-texture_progress = ExtResource("2_b8i2c")
-texture_progress_offset = Vector2(2.08165e-12, 2.08165e-12)
+offset_left = 19.0
+offset_top = 2.0
+offset_right = 77.0
+offset_bottom = 23.0
+text = "10"
+label_settings = SubResource("LabelSettings_42c66")
+horizontal_alignment = 1

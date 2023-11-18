@@ -8,8 +8,6 @@ space_name = "short_cut"
 total_volumn = 10
 init_types = {
 "axe": 1,
-"blind_box_1": 10,
-"email": 2,
 "hoe": 1,
 "pickaxe": 1,
 "stick": 1

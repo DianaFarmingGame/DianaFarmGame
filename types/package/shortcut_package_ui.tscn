@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cq2lwpuipu34e"]
 
-[ext_resource type="Texture2D" uid="uid://th5firkgojpg" path="res://asset/20231007-200214.jpeg" id="1"]
 [ext_resource type="Script" path="res://types/item/item_slot.gd" id="2"]
 [ext_resource type="Script" path="res://types/item/item_space_ui.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6xcb2asfg4gg" path="res://asset/ui/背包框.png" id="3_o1uns"]
 [ext_resource type="Resource" uid="uid://dhutijsnmlnri" path="res://dbs/item/short_cut_package_item.tres" id="4"]
-[ext_resource type="Texture2D" uid="uid://dahgib8hru5i2" path="res://asset/20231007-200450.jpeg" id="5"]
+[ext_resource type="Texture2D" uid="uid://dvydw84bsh5ql" path="res://asset/ui/背包选中.png" id="4_6576v"]
 
 [node name="ItemSpace" type="GridContainer"]
 anchors_preset = 7
@@ -14,10 +14,11 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -394.0
 offset_top = -96.0
-offset_right = 246.0
-offset_bottom = 264.0
+offset_right = -74.0
+offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/h_separation = 0
 columns = 10
 script = ExtResource("3")
 space = ExtResource("4")
@@ -25,69 +26,69 @@ space = ExtResource("4")
 [node name="ItemSlot" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot2" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot3" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot4" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot5" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot6" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot7" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot8" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot9" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
 
 [node name="ItemSlot10" type="TextureButton" parent="."]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("1")
-texture_pressed = ExtResource("5")
+texture_normal = ExtResource("3_o1uns")
+texture_pressed = ExtResource("4_6576v")
 script = ExtResource("2")
