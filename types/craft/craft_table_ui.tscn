@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://debs6ic1cs6gj"]
+[gd_scene load_steps=9 format=3 uid="uid://debs6ic1cs6gj"]
 
-[ext_resource type="Texture2D" uid="uid://d1evemdvk6f4d" path="res://asset/20231003-005105.jpeg" id="1"]
 [ext_resource type="Script" path="res://types/craft/craft_table_ui.gd" id="2"]
 [ext_resource type="Script" path="res://types/item/item_slot.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://bx3jir4wnadha" path="res://asset/20231004-000905.jpeg" id="4"]
+[ext_resource type="Texture2D" uid="uid://c6xcb2asfg4gg" path="res://asset/ui/背包框.png" id="4_hvxas"]
 [ext_resource type="Resource" uid="uid://c73w61jcijxsb" path="res://dbs/craft/craft_input.tres" id="5"]
 [ext_resource type="Script" path="res://types/item/item_space_ui.gd" id="6"]
 [ext_resource type="Resource" uid="uid://d4bqqjaxc2l2d" path="res://dbs/craft/craft_output.tres" id="7"]
@@ -16,19 +15,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = -169.5
-offset_right = 375.0
-offset_bottom = 169.5
+offset_left = -185.0
+offset_top = -81.0
+offset_right = 187.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2")
 
 [node name="InputSlot" type="GridContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -153.5
-offset_right = 301.0
-offset_bottom = 153.5
+offset_top = -64.5
+offset_right = 130.0
+offset_bottom = 64.5
+grow_vertical = 2
 theme_override_constants/h_separation = 14
 theme_override_constants/v_separation = 14
 columns = 3
@@ -37,58 +40,61 @@ space = ExtResource("5")
 
 [node name="ItemSlot" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot2" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot3" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot4" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot5" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot6" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot7" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot8" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot9" type="TextureButton" parent="InputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("1")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="OutputSlot" type="GridContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = -147.5
-offset_bottom = 147.5
+offset_left = -126.0
+offset_top = -64.5
+offset_bottom = 64.5
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_constants/h_separation = 14
 theme_override_constants/v_separation = 14
 columns = 3
@@ -97,51 +103,52 @@ space = ExtResource("7")
 
 [node name="ItemSlot" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot2" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot3" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot4" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot5" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot6" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot7" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot8" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="ItemSlot9" type="TextureButton" parent="OutputSlot"]
 layout_mode = 2
-texture_normal = ExtResource("4")
+texture_normal = ExtResource("4_hvxas")
 script = ExtResource("3")
 
 [node name="CraftButton" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -150,5 +157,7 @@ offset_left = -48.5
 offset_top = -44.0
 offset_right = 48.5
 offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
 icon = ExtResource("9")
 script = ExtResource("8")

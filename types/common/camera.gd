@@ -17,3 +17,4 @@ func _process(delta):
 #		var move = target_position - position
 #		position += move.normalized() * (distance - max_distance)
 #		position = position.lerp(target_position, 0.02)
+

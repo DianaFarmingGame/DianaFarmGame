@@ -1,9 +1,41 @@
-[gd_scene format=3 uid="uid://4kn3p6fk4682"]
+[gd_scene load_steps=5 format=3 uid="uid://4kn3p6fk4682"]
 
-[node name="dialog_head" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Texture2D" uid="uid://d3iqvhq6glage" path="res://asset/ui/头顶对话框.png" id="1_oscey"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fkrmi"]
+texture = ExtResource("1_oscey")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="FontFile" id="FontFile_4yug5"]
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ai6r"]
+font = SubResource("FontFile_4yug5")
+font_size = 10
+font_color = Color(0.0235294, 0.0235294, 0.0235294, 1)
+
+[node name="Label" type="Label"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 86.0
+offset_bottom = 67.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_fkrmi")
+text = "天王盖地虎，嘉然一米五"
+label_settings = SubResource("LabelSettings_3ai6r")
+autowrap_mode = 1

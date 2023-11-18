@@ -6,6 +6,4 @@
 script = ExtResource("3")
 space_name = "package"
 total_volumn = 35
-init_types = {
-"weixing": 2
-}
+init_types = {}
