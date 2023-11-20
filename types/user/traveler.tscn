@@ -28,7 +28,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CapsuleShape2D_lp1pn")
 
 [node name="animation" parent="." instance=ExtResource("2_nkf2y")]
-animation = &"traveler_exhausted"
+animation = &"traveler_run"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_smoothed = true

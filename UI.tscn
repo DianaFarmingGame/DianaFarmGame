@@ -22,10 +22,10 @@ grow_vertical = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -537.0
-offset_top = -95.0
-offset_right = -155.0
-offset_bottom = 85.0
+offset_left = -426.0
+offset_top = -187.0
+offset_right = -44.0
+offset_bottom = -7.0
 grow_horizontal = 0
 
 [node name="ShortcutPackage" parent="." instance=ExtResource("2")]
@@ -38,8 +38,8 @@ offset_bottom = -58.0
 anchors_preset = 4
 anchor_left = 0.0
 anchor_right = 0.0
-offset_left = 78.0
-offset_top = -129.0
-offset_right = 289.0
-offset_bottom = 97.0
+offset_left = 41.0
+offset_top = -136.0
+offset_right = 252.0
+offset_bottom = 90.0
 grow_horizontal = 1

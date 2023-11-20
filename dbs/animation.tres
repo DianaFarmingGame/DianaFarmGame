@@ -144,7 +144,7 @@ animations = [{
 "texture": ExtResource("22_e0ajx")
 }],
 "loop": true,
-"name": &"traveler_chop",
+"name": &"traveler_axe",
 "speed": 20.0
 }, {
 "frames": [{
@@ -190,7 +190,65 @@ animations = [{
 "texture": ExtResource("14_5wc1c")
 }],
 "loop": true,
-"name": &"traveler_hoeing",
+"name": &"traveler_hoe",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_bclgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_j3gr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ysrbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qcrcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_20wr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_wmwe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bljty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_7xt2d")
+}],
+"loop": true,
+"name": &"traveler_pickaxe",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qdlt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bdfbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_unlev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t3aga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vxlph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_r4yos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aarok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jwd10")
+}],
+"loop": true,
+"name": &"traveler_run",
 "speed": 20.0
 }, {
 "frames": [{
@@ -208,7 +266,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"traveler_stand",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -241,35 +299,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("43_bclgx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_j3gr6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_ysrbj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_qcrcb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_20wr1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_wmwe6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_bljty")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_7xt2d")
-}],
-"loop": true,
-"name": &"traveler_tap",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("7_qdlt7")
 }, {
 "duration": 1.0,
@@ -295,5 +324,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"traveler_walk",
-"speed": 10.0
+"speed": 8.0
 }]

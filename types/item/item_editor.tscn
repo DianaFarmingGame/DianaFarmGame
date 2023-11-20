@@ -1,8 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgxv4m4nhaq84"]
+[gd_scene load_steps=4 format=3 uid="uid://db5uiib4wntu4"]
 
-[ext_resource type="Script" path="res://types/item/item_editor.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://5ojtkatf48cl" path="res://asset/20231006-173648.jpeg" id="2"]
-[ext_resource type="Texture2D" uid="uid://cl7uhbqq8el0f" path="res://asset/20231006-173551.jpeg" id="3"]
+[sub_resource type="GDScript" id="GDScript_7a1vm"]
+script/source = "@tool
+extends Control
+
+var item_dictionary: ItemDictionary = preload(\"res://dbs/item/item_dictionary.tres\")
+
+func _ready():
+	update()
+	var add_button = $Panel/AddButton
+	add_button.connect(\"pressed\", Callable(self, \"_on_add_button_pressed\"))
+	var save_button = $Panel/SaveButton
+	save_button.connect(\"pressed\", Callable(self, \"_on_save_button_pressed\"))
+
+
+func _on_add_button_pressed():
+	print(\"add item\")
+	var empty_item = Item.new()
+	item_dictionary.add_item(empty_item)
+	update()
+
+func _on_save_button_pressed():
+	print(\"save item\")
+	
+
+func update():
+	var grid = $\"%GridContainer\"
+	# 获取子节点数量
+	var child_count = grid.get_child_count()
+
+	# 循环删除所有子节点
+	for i in range(child_count):
+		var child = grid.get_child(i)
+		child.queue_free()
+
+	var items = item_dictionary.get_all_item()
+	for item in items:
+		var texture_rect = TextureRect.new()
+		texture_rect.texture = item.texture
+		var name_edit = LineEdit.new()
+		name_edit.text = item.name
+		var hp_edit = SpinBox.new()
+		hp_edit.value = item.hp
+		var mp_edit = SpinBox.new()
+		mp_edit.value = item.mp
+
+		grid.add_child(name_edit)
+		grid.add_child(texture_rect)
+		grid.add_child(hp_edit)
+		grid.add_child(mp_edit)
+
+func edit_name(item_name: String, new_name: String):
+	var item:Item = item_dictionary.get_item(item_name)
+	item.name = new_name
+	item_dictionary.edit_item(item_name, item)
+	
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3lsln"]
+load_path = "res://.godot/imported/20231006-173551.jpeg-5937544d551910ab94966e053f0c9db9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gim62"]
+load_path = "res://.godot/imported/20231006-173648.jpeg-1b2892c82567c85b7c190f349e375d7c.ctex"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,7 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1")
+script = SubResource("GDScript_7a1vm")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -41,7 +100,7 @@ offset_left = -207.5
 offset_top = -37.0
 offset_right = -155.5
 offset_bottom = -5.0
-icon = ExtResource("3")
+icon = SubResource("CompressedTexture2D_3lsln")
 
 [node name="SaveButton" type="Button" parent="Panel"]
 layout_mode = 0
@@ -53,4 +112,4 @@ offset_left = 29.5
 offset_top = -39.0
 offset_right = 83.5
 offset_bottom = -1.0
-icon = ExtResource("2")
+icon = SubResource("CompressedTexture2D_gim62")
