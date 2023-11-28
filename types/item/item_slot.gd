@@ -29,7 +29,7 @@ func _drop_data(_position, data):
 		var move_window = ItemMove.instantiate()
 		move_window.item = data.item.item
 		move_window.num = data.item.num
-#		move_window.set_position(Vector2.ZERO)
+		move_window.max_num = data.item.num
 		ui.add_child(move_window)
 		var move_num = await move_window.check
 		if move_num == 0:

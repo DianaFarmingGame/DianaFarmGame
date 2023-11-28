@@ -10,6 +10,9 @@ func _ready():
 	space.init()
 	for item_index in space.items.size():
 		updata_space(item_index)
+	var select = $"../select"
+	if select != null:
+		select.hide()
 
 func _input(event):
 	if space.space_name == "short_cut":
@@ -56,11 +59,14 @@ func add_item(item: Node) -> bool:
 
 func change_used(index: int):
 	if highlight_slot != null:
-		highlight_slot.button_pressed = false
+#		highlight_slot.button_pressed = false
 		if highlight_slot.get_index() == index:
 			use_item = null
 			highlight_slot = null
+			$"../select".hide()
 			return
 	highlight_slot = get_child(index)
-	highlight_slot.button_pressed = true
+#	highlight_slot.button_pressed = true
 	use_item = space.get_item(index)
+	$"../select".position = Vector2(-4 + index * 32,0)
+	$"../select".show()

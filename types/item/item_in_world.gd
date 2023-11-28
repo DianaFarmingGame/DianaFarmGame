@@ -10,9 +10,9 @@ var can_collect = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	item = item_dic.item_dictionary.get(item_name)
-	$animation.play(item.name)
 	$Label.text = item.name
 	$Label.hide()
+	$TextureRect.texture = item.world_texture
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +24,7 @@ func _process(delta):
 		
 
 func _on_area_2d_body_entered(body):
+	print(body.get_parent().name)
 	if body.get_parent().name == "traveler":
 		can_collect = true
 		$Label.show()

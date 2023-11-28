@@ -12,7 +12,9 @@ static func load_config(path: String, fields: Array):
 		# 获取每个小节的数据。
 		data[item] = {}
 		for field in fields:
-			data[item][field] = config.get_value(item, field)
+			var value = config.get_value(item, field)
+			if value != null:
+				data[item][field] = value
 	return data
 #
 #static func save_config():

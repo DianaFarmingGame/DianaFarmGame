@@ -139,7 +139,7 @@ func money_change(value):
 
 # 按下任意键后的行为
 func _on_space_press():
-	var use_item = ui.get_node("ShortcutPackage").use_item
+	var use_item = ui.get_node("ShortcutPackage/ItemSpace").use_item
 	use(use_item)
 			
 func use(use_item):

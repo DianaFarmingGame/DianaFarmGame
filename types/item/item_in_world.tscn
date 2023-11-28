@@ -1,27 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://b14i808eq4xqn"]
+[gd_scene load_steps=3 format=3 uid="uid://b14i808eq4xqn"]
 
 [ext_resource type="Script" path="res://types/item/item_in_world.gd" id="1_bw2el"]
-[ext_resource type="PackedScene" uid="uid://2i14dgh7xwtf" path="res://types/animation/animation.tscn" id="3_2v8pl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_25gaf"]
-radius = 26.0768
+radius = 49.0102
 
 [node name="item_in_world" type="Node2D"]
-position = Vector2(551, 329)
+position = Vector2(539, 315)
 script = ExtResource("1_bw2el")
 item_name = "email"
-metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18, 17)
 shape = SubResource("CircleShape2D_25gaf")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="animation" parent="." instance=ExtResource("3_2v8pl")]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -10,8 +10,9 @@ func _drop_data(_position, data):
 	var move_window = ItemMove.instantiate()
 	move_window.item = data.item.item
 	move_window.num = data.item.num
+	move_window.max_num = data.item.num
 	move_window.set_position(Vector2.ZERO)
-	get_tree().get_root().add_child(move_window)
+	ui.add_child(move_window)
 	var num = await move_window.check
 	if num == 0:
 		return

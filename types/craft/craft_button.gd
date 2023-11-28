@@ -2,8 +2,8 @@ extends Button
 
 const ItemNode = preload("res://types/item/item_node.tscn")
 
-var craft_table = preload("res://dbs/craft/craft_table.tres")
 var craft_forbidden = preload("res://types/craft/craft_forbidden.tscn")
+var craft_table = CraftTable.new()
 
 func _ready():
 	var button = $"."
@@ -12,7 +12,14 @@ func _ready():
 func on_button_pressed():
 	var input_space = $"../InputSlot".space
 	var input_items = input_space.items
-	var output_items = craft_table.get_craft_result(input_items)
+	var input_item_name_list = []
+	for item in input_items:
+		if item != null:
+			input_item_name_list.append(item.item.name)
+		else :
+			input_item_name_list.append(null)
+	var key = "+".join(input_item_name_list)
+	var output_items = craft_table.get_craft_result(key)
 	var output_space = $"../OutputSlot".space
 	if output_items != null:
 		#如果输出栏中有物品未取出，则合成失败
@@ -22,7 +29,10 @@ func on_button_pressed():
 			return
 		for index in output_items.size():
 			var node = ItemNode.instantiate()
-			node.item = output_items[index]
+			var name = output_items[index]
+			if name == null:
+				continue
+			node.item = item_dic.item_dictionary[name]
 			node.num = 1
 			output_space.set_item(index, node)
 		#清除输入栏

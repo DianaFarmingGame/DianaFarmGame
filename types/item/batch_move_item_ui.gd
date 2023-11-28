@@ -2,6 +2,7 @@ extends Panel
 
 var item: Item: set = set_item
 var num: int: set = set_num
+var max_num: int : set = set_max_num
 
 signal check(value)
 
@@ -13,8 +14,9 @@ func set_item(value):
 func set_num(value):
 	num = value
 	$Num.value = value
-	$Num.max_value = value
 	
+func set_max_num(value):
+	$Num.max_value = value
 
 func _on_check_pressed():
 	emit_signal("check", num)

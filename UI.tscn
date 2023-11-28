@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx0gooj572s8f"]
+[gd_scene load_steps=6 format=3 uid="uid://bx0gooj572s8f"]
 
 [ext_resource type="PackedScene" uid="uid://debs6ic1cs6gj" path="res://types/craft/craft_table_ui.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cq2lwpuipu34e" path="res://types/package/shortcut_package_ui.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://xmttbatphjit" path="res://types/package/package_ui.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://cuqw6ejx1wrm5" path="res://types/user/status.tscn" id="4_m0dpd"]
+[ext_resource type="PackedScene" uid="uid://c76fcecjkprlx" path="res://types/common/WorldTime.tscn" id="5_0x8fm"]
 
 [node name="Control" type="CanvasLayer"]
 
@@ -11,10 +12,10 @@
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 15.0
+offset_left = 14.0
 offset_top = 17.0
-offset_right = 1008.0
-offset_bottom = 622.0
+offset_right = 1007.0
+offset_bottom = 47.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -28,12 +29,6 @@ offset_right = -44.0
 offset_bottom = -7.0
 grow_horizontal = 0
 
-[node name="ShortcutPackage" parent="." instance=ExtResource("2")]
-offset_left = -224.0
-offset_top = -108.0
-offset_right = 282.0
-offset_bottom = -58.0
-
 [node name="Package" parent="." instance=ExtResource("3")]
 anchors_preset = 4
 anchor_left = 0.0
@@ -43,3 +38,13 @@ offset_top = -136.0
 offset_right = 252.0
 offset_bottom = 90.0
 grow_horizontal = 1
+
+[node name="WorldTime" parent="." instance=ExtResource("5_0x8fm")]
+position = Vector2(769, 17)
+
+[node name="ShortcutPackage" parent="." instance=ExtResource("2")]
+offset_left = 363.0
+offset_top = -45.248
+offset_right = 358.512
+offset_bottom = -45.0
+grow_vertical = 0
