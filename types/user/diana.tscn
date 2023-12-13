@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu55stvykowp7"]
+[gd_scene load_steps=4 format=3 uid="uid://cu55stvykowp7"]
 
-[ext_resource type="Script" path="res://types/user/user.gd" id="1_0f8ul"]
 [ext_resource type="PackedScene" uid="uid://2i14dgh7xwtf" path="res://types/animation/animation.tscn" id="1_xbrlj"]
 [ext_resource type="Script" path="res://types/common/camera.gd" id="3_a2dtl"]
 
@@ -12,12 +11,6 @@ position = Vector2(429, 265)
 collision_layer = 16
 collision_mask = 16
 motion_mode = 1
-script = ExtResource("1_0f8ul")
-speed = 200
-run_speed = 300
-hp_max = 800
-mp_max = 270
-eat_limit = 10
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

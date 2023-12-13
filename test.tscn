@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bahb30osaswt0"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_qw2m5"]
+[ext_resource type="PackedScene" uid="uid://xmttbatphjit" path="res://types/package/package_ui.tscn" id="2_pbhmj"]
+[ext_resource type="PackedScene" uid="uid://cuqw6ejx1wrm5" path="res://types/common/status.tscn" id="3_1agai"]
+[ext_resource type="PackedScene" uid="uid://cq2lwpuipu34e" path="res://types/package/shortcut_package_ui.tscn" id="4_qwd6d"]
+
+[node name="test" type="Node2D"]
+script = ExtResource("1_qw2m5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="status" parent="CanvasLayer" instance=ExtResource("3_1agai")]
+offset_bottom = -538.0
+
+[node name="package" parent="CanvasLayer" instance=ExtResource("2_pbhmj")]
+offset_left = -255.0
+offset_top = -146.0
+offset_right = 109.0
+offset_bottom = -35.0
+
+[node name="shortcut" parent="CanvasLayer" instance=ExtResource("4_qwd6d")]
+offset_left = 301.0
+offset_top = -79.248
+offset_right = 296.512
+offset_bottom = -79.0

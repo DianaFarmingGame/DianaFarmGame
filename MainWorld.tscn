@@ -1,14 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://v63vbemp01w2"]
+[gd_scene load_steps=3 format=3 uid="uid://v63vbemp01w2"]
 
 [ext_resource type="Texture2D" uid="uid://ddneoaet1oey" path="res://asset/20231106-193707.jpeg" id="2_83vmp"]
-[ext_resource type="PackedScene" uid="uid://b14i808eq4xqn" path="res://types/item/item_in_world.tscn" id="3_c787g"]
 [ext_resource type="Script" path="res://types/common/alternation.gd" id="3_q3cp8"]
 
 [node name="MainWorld" type="Node2D"]
-
-[node name="item_in_world" parent="." instance=ExtResource("3_c787g")]
-position = Vector2(710, 85)
-item_name = "stick"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1

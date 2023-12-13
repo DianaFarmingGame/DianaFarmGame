@@ -1,13 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://b14i808eq4xqn"]
+[gd_scene load_steps=3 format=3 uid="uid://cebrr7vmpfy07"]
 
-[ext_resource type="Script" path="res://types/item/item_in_world.gd" id="1_bw2el"]
+[sub_resource type="GDScript" id="GDScript_4nc4g"]
+script/source = "extends Node2D
+
+const ItemNode = preload(\"res://types/item/item_node.tscn\")
+
+@export var item_name: String
+var item: Item
+var num = 1
+var can_collect = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	item = item_dic.item_dictionary.get(item_name)
+	$Label.text = item.name
+	$Label.hide()
+	$TextureRect.texture = item.world_texture
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if can_collect && Input.is_action_pressed(\"universal\"):
+		var item_instance = gen_item_instance()
+		ui.get_node(\"Package/ItemSpace\").add_item(item_instance)
+		self.queue_free()
+		
+
+func _on_area_2d_body_entered(body):
+	print(body.get_parent().name)
+	if body.get_parent().name == \"traveler\":
+		can_collect = true
+		$Label.show()
+
+
+func _on_area_2d_body_exited(body):
+	if body.get_parent().name == \"traveler\":
+		can_collect = false
+		$Label.hide()
+
+func gen_item_instance():
+	var item_instance = ItemNode.instantiate()
+	item_instance.item = self.item
+	item_instance.num = self.num
+	return item_instance
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_25gaf"]
 radius = 49.0102
 
 [node name="item_in_world" type="Node2D"]
 position = Vector2(539, 315)
-script = ExtResource("1_bw2el")
+script = SubResource("GDScript_4nc4g")
 item_name = "email"
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -1,25 +1,27 @@
 [gd_scene load_steps=8 format=3 uid="uid://xmttbatphjit"]
 
 [ext_resource type="Script" path="res://types/package/package_ui.gd" id="1"]
-[ext_resource type="Script" path="res://types/item/item_slot.gd" id="2"]
-[ext_resource type="Script" path="res://types/item/item_space_ui.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://c6xcb2asfg4gg" path="res://asset/ui/背包框.png" id="4_881eh"]
-[ext_resource type="Resource" uid="uid://b5pixhmtrq7wf" path="res://dbs/item/package_item.tres" id="5"]
-[ext_resource type="Texture2D" uid="uid://bw7nlnpgqc6gh" path="res://asset/20231030-195740.jpeg" id="6_36voj"]
+[ext_resource type="Texture2D" uid="uid://c6rjj8ntxwhn0" path="res://asset/ui/背包栏框.png" id="5_ys5or"]
+[ext_resource type="SpriteFrames" uid="uid://c3mi3uk3b75r7" path="res://dbs/animation.tres" id="6_dr00t"]
+[ext_resource type="Texture2D" uid="uid://cplcrwmt1oryn" path="res://asset/ui/背包框框选.png" id="6_ewivm"]
+[ext_resource type="Script" path="res://types/package/space_slot.gd" id="6_x8owq"]
 [ext_resource type="Script" path="res://types/package/Waste.gd" id="7_j6bm1"]
 
-[node name="Panel" type="Panel"]
+[node name="Panel" type="TextureRect"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -194.0
-offset_right = 114.0
-offset_bottom = 71.0
+offset_left = -256.0
+offset_top = -81.0
+offset_right = 108.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("4_881eh")
+stretch_mode = 2
 script = ExtResource("1")
 
 [node name="ItemSpace" type="GridContainer" parent="."]
@@ -27,236 +29,172 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -112.0
-offset_right = 160.0
-offset_bottom = 112.0
+offset_left = 39.0
+offset_top = -51.5
+offset_right = 359.0
+offset_bottom = 19.5
 grow_vertical = 2
 theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-columns = 5
-script = ExtResource("3")
-space = ExtResource("5")
+theme_override_constants/v_separation = 2
+columns = 10
 
 [node name="ItemSlot" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot2" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot3" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot4" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot5" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot6" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot7" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot8" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot9" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot10" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot11" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot12" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot13" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot14" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot15" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot16" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot17" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot18" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot19" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
 [node name="ItemSlot20" type="TextureButton" parent="ItemSpace"]
 layout_mode = 2
-texture_normal = ExtResource("4_881eh")
+texture_normal = ExtResource("5_ys5or")
+texture_focused = ExtResource("6_ewivm")
 stretch_mode = 0
-script = ExtResource("2")
+script = ExtResource("6_x8owq")
 
-[node name="ItemSlot21" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot22" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot23" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot24" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot25" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot26" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot27" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot28" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot29" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot30" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot31" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot32" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot33" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot34" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="ItemSlot35" type="TextureButton" parent="ItemSpace"]
-layout_mode = 2
-texture_normal = ExtResource("4_881eh")
-stretch_mode = 0
-script = ExtResource("2")
-
-[node name="Waste" type="TextureRect" parent="."]
+[node name="Waste" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = -67.0
+offset_left = -40.0
+offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("6_36voj")
 script = ExtResource("7_j6bm1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Waste"]
+position = Vector2(21, 17)
+sprite_frames = ExtResource("6_dr00t")
+animation = &"garbage"
+
+[connection signal="mouse_entered" from="Waste" to="Waste" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Waste" to="Waste" method="_on_mouse_exited"]

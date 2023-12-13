@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3dc13m6rjq2b"]
+[gd_scene load_steps=4 format=3 uid="uid://b3dc13m6rjq2b"]
 
-[ext_resource type="Script" path="res://types/user/user.gd" id="1_hrvie"]
 [ext_resource type="PackedScene" uid="uid://2i14dgh7xwtf" path="res://types/animation/animation.tscn" id="2_nkf2y"]
 [ext_resource type="Script" path="res://types/common/camera.gd" id="3_ansjj"]
 
@@ -14,14 +13,6 @@ collision_layer = 16
 collision_mask = 16
 motion_mode = 1
 platform_on_leave = 2
-script = ExtResource("1_hrvie")
-player = 1
-speed = 200
-run_speed = 300
-hp_max = 1000
-mp_max = 270
-eat_limit = 5
-init_money = 100
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

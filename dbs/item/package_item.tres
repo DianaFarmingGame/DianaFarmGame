@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("3")
 space_name = "package"
-total_volumn = 35
+total_volumn = 20
 init_types = {}

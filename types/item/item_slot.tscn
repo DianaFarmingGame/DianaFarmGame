@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8sc73m58awym"]
 
-[ext_resource type="Texture2D" uid="uid://c6xcb2asfg4gg" path="res://asset/ui/背包框.png" id="1_7uf68"]
-[ext_resource type="Script" path="res://types/item/item_slot.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://c6rjj8ntxwhn0" path="res://asset/ui/背包栏框.png" id="1_l0nth"]
+[ext_resource type="Script" path="res://types/package/space_slot.gd" id="2_t03us"]
 
 [node name="ItemSlot" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_7uf68")
+texture = ExtResource("1_l0nth")
 stretch_mode = 6
-script = ExtResource("2")
+script = ExtResource("2_t03us")

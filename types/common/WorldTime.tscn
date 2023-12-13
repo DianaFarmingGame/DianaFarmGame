@@ -11,50 +11,51 @@ font_size = 10
 script = ExtResource("1_iia6f")
 
 [node name="date" type="TextureRect" parent="."]
+offset_top = 32.0
 offset_right = 71.0
-offset_bottom = 23.0
+offset_bottom = 55.0
 texture = ExtResource("2_bq04j")
 expand_mode = 3
 
 [node name="time" type="TextureRect" parent="."]
-offset_left = 71.0
-offset_right = 156.235
-offset_bottom = 23.0
+offset_top = 1.0
+offset_right = 85.2353
+offset_bottom = 24.0
 texture = ExtResource("3_b66wi")
 expand_mode = 3
 
 [node name="month" type="Label" parent="."]
-offset_left = 19.0
-offset_top = 4.0
-offset_right = 44.0
-offset_bottom = 21.0
+offset_left = 20.0
+offset_top = 36.0
+offset_right = 45.0
+offset_bottom = 53.0
 text = "3"
 label_settings = SubResource("LabelSettings_xdu5i")
 horizontal_alignment = 1
 
 [node name="day" type="Label" parent="."]
 offset_left = 47.0
-offset_top = 4.0
+offset_top = 36.0
 offset_right = 66.0
-offset_bottom = 21.0
+offset_bottom = 53.0
 text = "7"
 label_settings = SubResource("LabelSettings_xdu5i")
 horizontal_alignment = 1
 
 [node name="hour" type="Label" parent="."]
-offset_left = 89.0
-offset_top = 4.0
-offset_right = 131.0
-offset_bottom = 21.0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 60.0
+offset_bottom = 22.0
 text = "20"
 label_settings = SubResource("LabelSettings_xdu5i")
 horizontal_alignment = 1
 
 [node name="minute" type="Label" parent="."]
-offset_left = 133.0
-offset_top = 4.0
-offset_right = 152.0
-offset_bottom = 21.0
+offset_left = 62.0
+offset_top = 5.0
+offset_right = 81.0
+offset_bottom = 22.0
 text = "00"
 label_settings = SubResource("LabelSettings_xdu5i")
 horizontal_alignment = 1

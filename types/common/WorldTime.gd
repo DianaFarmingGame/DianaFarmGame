@@ -21,10 +21,10 @@ func time_update(value):
 	$hour.text = str(date_time['hour'])
 	$minute.text = str(date_time['minute'])
 	var hour = date_time['hour']
-	var node = get_tree().root.get_node("MainWorld/sun")
-	if hour == 18 or hour == 19:
-		get_tree().root.get_node("MainWorld/sun").status = Alternation.DayTime.SUNSET
-	elif hour == 5 or hour == 6:
-		get_tree().root.get_node("MainWorld/sun").status = Alternation.DayTime.SUNRISE
-	else:
-		get_tree().root.get_node("MainWorld/sun").status = Alternation.DayTime.NORMAL
+#	var node = get_tree().root.get_node("MainWorld/sun")
+#	if hour == 18 or hour == 19:
+#		node.status = Alternation.DayTime.SUNSET
+#	elif hour == 5 or hour == 6:
+#		node.status = Alternation.DayTime.SUNRISE
+#	else:
+#		node.status = Alternation.DayTime.NORMAL

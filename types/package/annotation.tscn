@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd10cp2s5jfuo"]
+
+[ext_resource type="Texture2D" uid="uid://ixfhck6ygxbh" path="res://asset/ui/注解框.png" id="1_jatrk"]
+[ext_resource type="Script" path="res://types/package/annotation.gd" id="2_7276h"]
+
+[sub_resource type="SystemFont" id="SystemFont_kifef"]
+font_names = PackedStringArray("Cubic 11")
+font_italic = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_hb1hr"]
+font = SubResource("SystemFont_kifef")
+font_size = 12
+
+[node name="annotation" type="TextureRect"]
+offset_right = 108.0
+offset_bottom = 81.0
+texture = ExtResource("1_jatrk")
+script = ExtResource("2_7276h")
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 46.0
+offset_bottom = 24.0
+text = "呆毛"
+label_settings = SubResource("LabelSettings_hb1hr")
+
+[node name="type" type="Label" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 8.0
+offset_right = 100.0
+offset_bottom = 25.0
+text = "物品"
+label_settings = SubResource("LabelSettings_hb1hr")
+
+[node name="describe" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 28.0
+offset_right = 102.0
+offset_bottom = 75.0
+text = "乃琳我最近压力好大。。。"
+label_settings = SubResource("LabelSettings_hb1hr")
+autowrap_mode = 1
+text_overrun_behavior = 2
