@@ -18,12 +18,6 @@ config/icon="res://icon.png"
 [autoload]
 
 EditorIcon="*res://addons/editor_icon/editor_icon.gd"
-ToolSet="*res://types/item/tool/toolset.gd"
-ConfigLoader="*res://config/load_config.gd"
-item_dic="*res://types/item/item_dictionary.gd"
-ui="*res://UI.tscn"
-diana="*res://types/user/diana.tscn"
-traveler="*res://types/user/traveler.tscn"
 
 [debug]
 

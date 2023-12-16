@@ -4,7 +4,6 @@ var max_distance = 150
 
 func _ready():
 	zoom = Vector2(3, 3)
-	position = traveler.position
 
 func _process(delta):
 #	var target_position

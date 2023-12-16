@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ItemSpace" load_steps=2 format=3 uid="uid://c73w61jcijxsb"]
-
-[ext_resource type="Script" path="res://types/item/item_space_resource.gd" id="1"]
-
-[resource]
-script = ExtResource("1")
-space_name = "craft_input"
-total_volumn = 9
-init_types = []
